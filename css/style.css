@@ -971,7 +971,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #qbootstrap-testimonials {
-  background: #FF847C;
+  /*background: #FF847C;*/
   z-index: 0;
 }
 #qbootstrap-testimonials .overlay {
