@@ -625,7 +625,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #qbootstrap-couple span {
   color: #FF847C;
-  letter-spacing: 10px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 14px;
   border: 1px solid rgba(255, 132, 124, 0.3);
@@ -655,6 +655,7 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
   position: relative;
   background-repeat: no-repeat;
+  background-position: center;
   z-index: 0;
   width: 100%;
 }
@@ -1784,4 +1785,8 @@ div.rocket div {
   -o-transform: rotate(70deg);
   -ms-transform: rotate(70deg);
   transform: rotate(70deg);
+}
+
+.nopadding {
+  padding: 0;
 }
