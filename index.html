@@ -67,6 +67,17 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+        <script>
+		$("#attend-form").submit(function(e) {
+		  e.preventDefault();
+
+		  var $form = $(this);
+		  $.post($form.attr("action"), $form.serialize()).then(function() {
+		    alert("Vielen Dank!");
+		  });
+		});
+        </script>
+
 	</head>
 	<body>
 	<header role="banner" id="qbootstrap-header">
@@ -83,7 +94,7 @@
 	            <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
 	            <li><a href="#" data-nav-section="groom-bride"><span>Brautpaar</span></a></li>
 	            <li><a href="#" data-nav-section="story"><span>Love Story</span></a></li>	            
-	            <li><a href="#" data-nav-section="greetings"><span>Grüße</span></a></li>	        
+	            <li><a href="#" data-nav-section="greetings"><span>Zitate</span></a></li>	        
 	            <li><a href="#" data-nav-section="people"><span>Freunde</span></a></li>
 	            <li><a href="#" data-nav-section="when-where"><span>Wo &amp; Wann</span></a></li>
 	            <li><a href="#" data-nav-section="rsvp"><span>RSVP</span></a></li>
@@ -586,7 +597,7 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form class="form-inline" method="POST" data-netlify="true">
+					<form id="attend-form" class="form-inline" method="POST" data-netlify="true">
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
 								<label for="name" class="sr-only">Name</label>
