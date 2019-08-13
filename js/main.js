@@ -277,7 +277,7 @@
 		document.getElementById("days").innerHTML = days +" <small>Tage</small>";
 		document.getElementById("hours").innerHTML = hours + " <small>Stunden</small> ";
 		document.getElementById("minutes").innerHTML = minutes + " <small>Minuten</small> ";
-		document.getElementById("seconds").innerHTML = seconds + " <small>Sekunden</small> ";
+//		document.getElementById("seconds").innerHTML = seconds + " <small>Sekunden</small> ";
 
 		// If the count down is finished, write some text 
 		if (distance < 0) {
