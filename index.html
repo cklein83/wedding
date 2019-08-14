@@ -72,26 +72,26 @@
             $(document).ready(function() {
                 $("#attendee-success-alert").hide();
 
-		$("#attend-form").submit(function(e) {
-		  e.preventDefault();
-		  var $form = $(this);
-		  
-          var name = $.trim($("#attendee-name").val());
-          var email = $.trim($("#attendee-email").val());         
-		  if (name !== "" && email !== "") {
-			  $.post($form.attr("action"), $form.serialize()).then(function() {
-			      $("#attendee-success-alert").fadeTo(2000, 500).slideUp(500, function() {
-				  $("#attendee-success-alert").slideUp(500);
-			      });
-			  });
-		  }
-		});
+				$("#attend-form").submit(function(e) {
+				  e.preventDefault();
+				  var $form = $(this);
+				  
+		          var name = $.trim($("#attendee-name").val());
+		          var email = $.trim($("#attendee-email").val());         
+				  if (name !== "" && email !== "") {
+					  $.post($form.attr("action"), $form.serialize()).then(function() {
+					      $("#attendee-success-alert").fadeTo(2000, 500).slideUp(500, function() {
+						  $("#attendee-success-alert").slideUp(500);
+					      });
+					  });
+				  }
+				});
             });
         </script>
 
 	</head>
 	<body>
-	<header role="banner" id="qbootstrap-header">
+	<header role="banner" id="qbootstrap-header" class="navbar-fixed-top">
 		<div class="container">
 			<!-- <div class="row"> -->
 		    <nav class="navbar navbar-default">
