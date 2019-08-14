@@ -1553,27 +1553,27 @@ h6 .small, .h6 small,
 }
 
 h1, .h1 {
-  font-size: 40px;
+  font-size: 44px;
 }
 
 h2, .h2 {
-  font-size: 34px;
+  font-size: 38px;
 }
 
 h3, .h3 {
-  font-size: 28px;
+  font-size: 32px;
 }
 
 h4, .h4 {
-  font-size: 22px;
+  font-size: 26px;
 }
 
 h5, .h5 {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 h6, .h6 {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 p {
@@ -1582,13 +1582,13 @@ p {
 
 .lead {
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300;
   line-height: 1.4;
 }
 @media (min-width: 768px) {
   .lead {
-    font-size: 25px;
+    font-size: 29px;
   }
 }
 
