@@ -14,7 +14,7 @@
 body {
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size:20px;
   line-height: 1.8;
   color: #777777;
   color: #7f7f7f;
@@ -1156,6 +1156,7 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
   position: relative;
   height: 400px;
+
 }
 .wedding-events .desc {
   padding: 2em;
@@ -1171,7 +1172,8 @@ h1, h2, h3, h4, h5, h6 {
   left: 10px;
   right: 10px;
   content: '';
-  background: #f4f3e2;
+  /*background: #f4f3e2;*/
+  background: #FFFAF0;
   z-index: -1;
 }
 .wedding-events .desc h3 {
@@ -1348,7 +1350,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #qbootstrap-press {
-  background: #f4f4f4;
+  /*background: #f4f4f4;*/
 }
 
 #qbootstrap-press .qbootstrap-press-item {
@@ -1421,6 +1423,107 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
   }
 }
+
+/* Veggi */
+
+#qbootstrap-veggie .section-heading h2 {
+  color: #fff;
+}
+
+#qbootstrap-veggie .section-heading p {
+  color: #fff;
+}
+
+#qbootstrap-veggie {
+  /*background: #FF847C;*/
+  z-index: 0;
+}
+
+#qbootstrap-veggie {
+  /*background: #FF847C;*/
+  z-index: 0;
+}
+
+#qbootstrap-veggie .overlay {
+  position: absolute !important;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#qbootstrap-veggie .section-heading {
+  margin-bottom: 0 !important;
+}
+#qbootstrap-veggie .section-heading h2 {
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  #qbootstrap-veggie .section-heading h2 {
+    font-size: 30px;
+  }
+}
+#qbootstrap-veggie .section-heading.svg-sm .svg {
+  height: 180px;
+  margin-bottom: -50px;
+  padding: 0;
+}
+#qbootstrap-veggie .section-heading.colored .svg {
+  fill: #fff;
+}
+
+.veggie-sub {
+  margin-top: 50px;
+}
+
+.veggie-quote img {
+  /*width: 300px;*/
+  width: 600px !important;
+  height: 400px !important;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  /*margin-top: -290px !important;*/
+  margin-top: -190px !important;
+  border: 10px solid #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.veggie-quote {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  margin-top: 110px;
+
+  position: relative;
+  z-index: 0;
+}
+
+.veggie-quote:after {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  content: '';
+  background: #eee;
+  z-index: -1;
+}
+
+.veggie-quote .desc {
+  z-index: 1;
+}
+.veggie-quote .desc h2 {
+  color: #FF847C;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+/* --- */
 
 .qbootstrap-nav-toggle {
   width: 25px;
