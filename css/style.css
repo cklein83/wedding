@@ -14,7 +14,7 @@
 body {
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-weight: 400;
-  font-size:20px;
+  font-size: 18px;
   line-height: 1.8;
   color: #777777;
   color: #7f7f7f;
@@ -240,8 +240,11 @@ h1, h2, h3, h4, h5, h6 {
 .section-heading {
   float: left;
   width: 100%;
+  /*
   padding-bottom: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 50px;*/
+  padding-bottom: 25px;
+  margin-bottom: 25px;
   clear: both;
 }
 .section-heading.svg-sm-2 .svg {
@@ -261,7 +264,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 80px;
   color: #FF847C;
   display: block;
-  padding-bottom: 20px;
+  /*padding-bottom: 20px;*/
+  padding-bottom: 0px;
   line-height: 1.5;
 }
 @media screen and (max-width: 768px) {
@@ -287,7 +291,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 
-#qbootstrap-couple,
+
+/*#qbootstrap-couple,
 #qbootstrap-countdown,
 #qbootstrap-groom-bride,
 #qbootstrap-story,
@@ -298,9 +303,20 @@ h1, h2, h3, h4, h5, h6 {
 #qbootstrap-testimonials,
 #qbootstrap-press,
 #qbootstrap-veggie {
-  padding: 7em 0;
+  padding: 5em 0;
+}*/
+
+
+.qbootstrap-section {
+  padding: 5em 0;
 }
+
+#qbootstrap-when-where {
+  padding-bottom: 0;
+}
+
 @media screen and (max-width: 480px) {
+  /*
   #qbootstrap-couple,
   #qbootstrap-countdown,
   #qbootstrap-groom-bride,
@@ -312,7 +328,11 @@ h1, h2, h3, h4, h5, h6 {
   #qbootstrap-testimonials,
   #qbootstrap-press,
   #qbootstrap-veggie {
-    padding: 5em 0;
+    padding: 3em 0;
+  }
+  */
+  .qbootstrap-section {
+    padding: 3em 0;
   }
 }
 
@@ -617,6 +637,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
 }
 
+/*
 #qbootstrap-couple img {
   margin-bottom: 20px;
   -webkit-border-radius: 50%;
@@ -653,6 +674,46 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 #qbootstrap-couple .amp-center .colored .svg {
+  fill: #FF847C;
+}
+*/
+
+.qbootstrap-couple img {
+  margin-bottom: 20px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+.qbootstrap-couple h3 {
+  font-size: 40px;
+  font-family: "Clicker Script", cursive;
+  color: #FF847C;
+}
+@media screen and (max-width: 768px) {
+  .qbootstrap-couple h3 {
+    font-size: 41px;
+  }
+}
+.qbootstrap-couple span {
+  color: #FF847C;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 18px;
+  border: 1px solid rgba(255, 132, 124, 0.3);
+  padding: 2px 5px;
+}
+.qbootstrap-couple .amp-center {
+  font-size: 60px;
+  margin-top: 125%;
+  color: #ff847c;
+}
+@media screen and (max-width: 768px) {
+  .qbootstrap-couple .amp-center {
+    font-size: 40px;
+  }
+}
+.qbootstrap-couple .amp-center .colored .svg {
   fill: #FF847C;
 }
 
@@ -1172,8 +1233,8 @@ h1, h2, h3, h4, h5, h6 {
   left: 10px;
   right: 10px;
   content: '';
-  /*background: #f4f3e2;*/
-  background: #FFFAF0;
+  background: #f4f3e2;
+  /*background: #FFFAF0;*/
   z-index: -1;
 }
 .wedding-events .desc h3 {
@@ -1349,10 +1410,11 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.1);
 }
 
-#qbootstrap-press {
+.qbootstrap-press {
   /*background: #f4f4f4;*/
 }
 
+/*
 #qbootstrap-press .qbootstrap-press-item {
   background: #fff;
   float: left;
@@ -1423,6 +1485,78 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
   }
 }
+*/
+
+.qbootstrap-press .qbootstrap-press-item {
+  background: #fff;
+  float: left;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}
+@media screen and (max-width: 480px) {
+  .qbootstrap-press .qbootstrap-press-item {
+    display: block !important;
+  }
+}
+.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text,
+.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
+  width: 50%;
+}
+@media screen and (max-width: 480px) {
+  .qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text,
+  .qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
+    height: inherit;
+    float: none !important;
+    width: 100%;
+    display: block !important;
+  }
+}
+.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text {
+  float: left;
+  padding: 20px;
+}
+.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .qbootstrap-press-title {
+  margin: 0 0 20px 0;
+  padding: 0 0 10px 0;
+  font-weight: 400;
+  font-size: 20px;
+  color: #444;
+  position: relative;
+}
+.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .qbootstrap-press-title .qbootstrap-border {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 30px;
+  background: #FF847C;
+}
+.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-size: cover;
+}
+@media screen and (max-width: 480px) {
+  .qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
+    height: 200px;
+    left: 0;
+    top: 0;
+    position: relative;
+    width: 100%;
+  }
+}
 
 /* Veggi */
 
@@ -1436,12 +1570,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #qbootstrap-veggie {
   /*background: #FF847C;*/
-  z-index: 0;
-}
-
-#qbootstrap-veggie {
-  /*background: #FF847C;*/
-  z-index: 0;
+  z-index: 0 !important;
 }
 
 #qbootstrap-veggie .overlay {
@@ -1477,6 +1606,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .veggie-sub {
   margin-top: 50px;
+}
+
+.veggie-sub .flex-control-nav {
+  display: none;
+}
+
+.veggie-sub .flex-direction-nav {
+  display: none;
 }
 
 .veggie-quote img {
@@ -1915,4 +2052,9 @@ div.rocket div {
 
 .rings img {
   -webkit-border-radius: 0% !important;
+}
+
+/* Trick: Honeypot */
+.phone {
+  display: none;
 }
