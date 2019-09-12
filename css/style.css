@@ -1086,7 +1086,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (max-width: 768px) {
   #qbootstrap-testimonials .section-heading h2 {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 #qbootstrap-testimonials .section-heading.svg-sm .svg {
@@ -1314,7 +1314,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (max-width: 768px) {
   #qbootstrap-started .section-heading h2 {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 #qbootstrap-started .section-heading h3 {
@@ -1435,9 +1435,7 @@ h1, h2, h3, h4, h5, h6 {
   /*background: #f4f4f4;*/
 }
 
-/*
-#qbootstrap-press .qbootstrap-press-item {
-  background: #fff;
+.qbootstrap-press .qbootstrap-press-item {  
   float: left;
   margin-bottom: 30px;
   position: relative;
@@ -1451,87 +1449,27 @@ h1, h2, h3, h4, h5, h6 {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
-}
-@media screen and (max-width: 480px) {
-  #qbootstrap-press .qbootstrap-press-item {
-    display: block !important;
-  }
-}
-#qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text,
-#qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
-  width: 50%;
-}
-@media screen and (max-width: 480px) {
-  #qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text,
-  #qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
-    height: inherit;
-    float: none !important;
-    width: 100%;
-    display: block !important;
-  }
-}
-#qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text {
-  float: left;
-  padding: 20px;
-}
-#qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .qbootstrap-press-title {
-  margin: 0 0 20px 0;
-  padding: 0 0 10px 0;
-  font-weight: 400;
-  font-size: 20px;
-  color: #444;
-  position: relative;
-}
-#qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .qbootstrap-press-title .qbootstrap-border {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 30px;
-  background: #FF847C;
-}
-#qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background-size: cover;
-}
-@media screen and (max-width: 480px) {
-  #qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
-    height: 200px;
-    left: 0;
-    top: 0;
-    position: relative;
-    width: 100%;
-  }
-}
-*/
 
-.qbootstrap-press .qbootstrap-press-item {
-  background: #fff;
-  float: left;
-  margin-bottom: 30px;
-  position: relative;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.05);  
+  margin-top: 40px;
+
+  min-height: 400px;
 }
 @media screen and (max-width: 480px) {
   .qbootstrap-press .qbootstrap-press-item {
     display: block !important;
+
+    min-height: 300px;
   }
 }
-.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text,
+.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text {
+  width: 50%;
+  background-color: #f4f3e2;
+}
 .qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
   width: 50%;
+  background-color: #fef6f8;
+  /*background-color: #ddd;*/  
 }
 @media screen and (max-width: 480px) {
   .qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text,
@@ -1613,7 +1551,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (max-width: 768px) {
   #qbootstrap-veggie .section-heading h2 {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 #qbootstrap-veggie .section-heading.svg-sm .svg {
