@@ -789,6 +789,8 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
 }
 
+/* Couple */
+
 .couple {
   border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 40px;
@@ -858,6 +860,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 40px;
   margin-bottom: 30px;
 }
+
+/* Love Story */
 
 .timeline {
   list-style: none;
@@ -1064,6 +1068,8 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
 }
 
+/* Vertraute */
+
 #qbootstrap-testimonials {
   /*background: #FF847C;*/
   z-index: 0;
@@ -1206,6 +1212,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px !important;
 }
 
+/* Vertraute */
+
+/*
 .groom-men img {
   margin-bottom: 20px;
   -webkit-border-radius: 50%;
@@ -1223,6 +1232,80 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Clicker Script", cursive;
   font-size: 28px;
 }
+*/
+
+
+.witness {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  margin-top: 110px;
+}
+.witness.groomsman {
+  position: relative;
+  z-index: 0;
+  min-height: 600px;
+}
+
+@media screen and (max-width: 1000px) {
+  .witness.groomsman {
+    min-height: 400px;
+  }
+}
+
+.witness.groomsman:after {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  content: '';
+  background: #f4f3e2;
+  z-index: -1;
+}
+
+.witness.bridesmaid {
+  position: relative;
+  z-index: 0;
+  min-height: 600px;
+}
+
+@media screen and (max-width: 1000px) {
+  .witness.bridesmaid {
+    min-height: 400px;
+  }
+}
+
+.witness.bridesmaid:after {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  content: '';
+  background: #fef6f8;
+  z-index: -1;
+}
+.witness img {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-top: -190px;
+  border: 10px solid #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+.witness .desc {
+  z-index: 1;
+}
+.witness .desc h2 {
+  color: #FF847C;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+/* Location */
 
 .wedding-events {
   background: #fff;
