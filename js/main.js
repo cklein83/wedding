@@ -55,7 +55,7 @@
 
 	  	$('#qbootstrap-slider-veggie .flexslider').flexslider({
 			animation: "fade",
-			slideshowSpeed: 12000,
+			slideshowSpeed: 17000,
 			directionNav: true,
 			start: function(){
 				setTimeout(function(){

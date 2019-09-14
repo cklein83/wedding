@@ -1537,6 +1537,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 40px;
 
   min-height: 400px;
+
+  width: 100%;
 }
 @media screen and (max-width: 480px) {
   .qbootstrap-press .qbootstrap-press-item {
@@ -1707,6 +1709,18 @@ h1, h2, h3, h4, h5, h6 {
   color: #FF847C;
   font-size: 40px;
   margin-bottom: 30px;
+}
+
+.col-md-12 .qbootstrap-press-item {
+  width: 100%;
+}
+
+.veggie-video {
+  /*background: #fef6f8;*/
+  background: #f4f3e2;
+  /*min-height: 600px;*/
+  padding: 30px;
+  width: 100%;
 }
 
 /* --- */
