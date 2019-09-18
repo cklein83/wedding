@@ -1127,6 +1127,10 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 1350px;
 }
 
+#qbootstrap-testimonials .box-testimony blockquote h3 {  
+  font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
 @media screen and (max-width: 1000px) {
   #qbootstrap-testimonials .box-testimony blockquote {
     min-height: auto;
