@@ -1327,9 +1327,9 @@ h1, h2, h3, h4, h5, h6 {
   .wedding-events {
     margin-bottom: 2em;
   }
-  .wedding-events .icon-calendar {
+/*  .wedding-events .icon-calendar {
     line-height: 5;
-  }
+  }*/
 }
 .wedding-events .ceremony-bg {
   background-size: cover;
@@ -1396,6 +1396,10 @@ h1, h2, h3, h4, h5, h6 {
   .wedding-events .desc .icon {
     position: relative;
     margin: 0;
+  }
+
+  .wedding-events .desc .icon-tip {
+    margin-bottom: 35px;
   }
 }
 
