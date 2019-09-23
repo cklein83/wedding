@@ -14,6 +14,139 @@
 	    );
 	};
 
+	/* Form Line --> */
+
+	const FORM_LINE_MAX_ROWS = 4;
+
+	function getFormLine(index, first) {		
+		var btnType = first ? "add" : "sub";
+		var btnVal = first ? "+" : "-";
+		return `<div id="attend-form-line-${index}" class="row form-group">
+			<div class="col-md-4 col-sm-4">
+				<input type="input" class="form-control fname" id="attendee-fname-${index}" name="Vorname-${index}" placeholder="Vorname" />
+			</div>
+			<div class="col-md-3 col-sm-3">		
+				<input type="input" class="form-control lname" id="attendee-lname-${index}" name="Nachname-${index}" placeholder="Nachname" />
+			</div>		
+			<div class="col-md-2 col-sm-2">
+				<input type="input" class="form-control age" id="attendee-age-${index}" name="Alter-${index}" placeholder="Alter" />
+			</div>	
+			<div class="col-md-2 col-sm-2">
+				<div class="toggle-btn active">
+					<input type="checkbox" checked class="cb-value attend" name="Anwesend-${index}" value="Ja" />
+					<span class="round-btn"></span>
+				</div>
+			</div>
+			<div class="col-md-1 col-sm-1">
+				<button id="attendee-add" class="btn btn-primary btn-block btn-control btn-${btnType}" type="button" data-id="${index}">${btnVal}</button>							
+			</div>
+		</div>`;		
+	}
+
+	function random() {
+		return generateId(5);
+	}
+
+	function generateId(length) {
+   		var result = '';
+   		var characters = '0123456789';
+   		var charactersLength = characters.length;
+   		for (var i = 0; i < length; i++) {
+      		result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   		}
+   		return result;
+	}
+
+	function addFormLine(first) {			
+
+		// abort if full
+		if ($("#attend-form-group .row").length == FORM_LINE_MAX_ROWS) {
+			return;		
+		}	
+
+		// add the line
+		$("#attend-form-group").append(getFormLine(random(), first));		
+
+		// if not the first row, add a delete button
+		if (!first) {
+			$("#attend-form-group .btn-sub").click(function() {								
+				removeFormLine($(this).attr("data-id"));
+			});
+		}
+
+		// add a click handler for every cb
+		$(".cb-value").click(function() {	
+    		var mainParent = $(this).parent('.toggle-btn');
+        	if($(mainParent).find('input.cb-value').is(':checked')) {
+    			$(mainParent).addClass('active');
+  			} else {  			
+    			$(mainParent).removeClass('active');
+  			}
+		});
+	}
+
+	// remove form line on sub-button click
+	function removeFormLine(index) {				
+		$("#attend-form-line-" + index).remove();		
+	}
+
+	// first form line
+	addFormLine(true);
+
+	// add form line on add-button click
+	$("#attend-form-group .btn-add").click(function() {
+		addFormLine(false);
+	});
+
+
+	// submit logic
+
+    $("#attendee-success-alert").hide();
+
+	$("#attend-form").submit(function(e) {
+		e.preventDefault();
+		var $form = $(this);
+
+		let success = true;
+
+		$("#attend-form-group .row").each(function() {	  		  
+			var fname = $(this).find("input.fname").val();
+			var lname = $(this).find("input.lname").val();
+			var age = $(this).find("input.age").val();	  	
+			
+			if (fname === "") {	  		
+				$(this).find("input.fname").addClass("error");
+				success = false;
+			} else {	  	
+				$(this).find("input.fname").removeClass("error");
+			}
+			if (lname === "") {
+				$(this).find("input.lname").addClass("error");
+				success = false;
+			} else {
+				$(this).find("input.lname").removeClass("error");
+			}
+			if (age > 12) {
+				$(this).find("input.age").addClass("error");
+				success = false;
+			} else {
+				$(this).find("input.age").removeClass("error");
+			}	  	
+		});
+
+		// on success
+		if (success) {
+			alert("SUCCESS!!!");
+			// $.post($form.attr("action"), $form.serialize()).then(function() {
+			// 	$("#attendee-success-alert").fadeTo(2000, 500).slideUp(500, function() {
+			// 		$("#attendee-success-alert").slideUp(500);
+			// 	});
+			// });
+		}
+
+	});
+
+	/* <-- Form Line */
 
 
 	// Carousel Feature Slide
