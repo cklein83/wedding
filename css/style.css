@@ -1270,7 +1270,7 @@ div.rocket div {
   width: 38%;
   float: left;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 50px;
+  padding: 30px;
   position: relative;
   z-index: 0;
   background: #fff;
@@ -1946,8 +1946,14 @@ div.rocket div {
   padding-left: 50px;
   padding-right: 50px;
 }
+
+#qbootstrap-started .form-inline h3 {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  color: #fff;
+}
+
 #qbootstrap-started .form-inline .form-group {
-  width: 100% !important;
+  /*width: 100% !important;*/
   margin-bottom: 10px;
 }
 #qbootstrap-started .form-inline .form-group .form-control {
@@ -1970,11 +1976,24 @@ div.rocket div {
   display: none;
 }
 
+#qbootstrap-started button[type=submit] {
+  width: 100%;
+}
+
+/* Toggle: First approach */
+
+.attend-label {
+  position: relative;
+  top: -30px;
+}
+
 .toggle-btn {
   width: 80px;
   height: 40px;
   margin: 10px;
-  border-radius: 50px;
+  /*border-radius: 50px;*/
+  border-radius: 4px;
+  /*border-radius: 0;*/
   display: inline-block;
   position: relative;
   background : url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyklEQVQ4T42TaxHCQAyENw5wAhLACVUAUkABOCkSwEkdhNmbpHNckzv689L98toIAKjqGcAFwElEFr5ln6ruAMwA7iLyFBM/TPDuQSrxwf6fCKBoX2UMIYGYkg8BLOnVg2RiAEexGaQQq4w9e9klcxGLLAUwgDAcihlYAR1IvZA1sz/+AAaQjXhTQQVoe2Yo3E7UQiT2ijeQdojRtClOfVKvMVyVpU594kZK9zzySWTlcNqZY9tjCsUds00+A57z1e35xzlzJjee8xf0HYp+cOZQUQAAAABJRU5ErkJggg==') no-repeat 50px center rgba(255, 255, 255, 0.2);
@@ -2001,7 +2020,8 @@ div.rocket div {
   width: 30px;
   height: 30px;
   background-color: #fff;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
+  border-radius: 0;
   display: inline-block;
   position: absolute;
   left: 5px;
@@ -2025,6 +2045,7 @@ div.rocket div {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 
+
 .btn-control {
   padding-left: 10px !important;
   padding-right: 10px !important;  
@@ -2032,16 +2053,154 @@ div.rocket div {
 
 .btn-add {
   /*background: rgba(255, 255, 255, 0.2) !important;*/
-  background: #008800 !important;
-  color: #fff !important;
+  background: #ddd !important;
+  color: #000 !important;
 }
 
 .btn-sub {
   /*background: rgba(255, 255, 255, 0.2) !important;*/
-  background: #880000 !important;
-  color: #fff !important;
+  background: #ddd !important;
+  color: #000 !important;
 }
 
+/* Slider */
+/*
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(255, 255, 255, 0.2);
+
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #a2ddd9;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #a2ddd9;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+*/
+
+/* simple toggle */
+
+
+
+.toggle-btn-2 {
+    /*border: 3px solid #1a1a1a;*/
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    transition: background 600ms ease, color 600ms ease;
+
+    /*background: rgba(255, 255, 255, 0.2);*/
+    border: none;
+    color: #fff;
+    /*font-size: 16px !important;  */
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+input[type="radio"].toggle {
+    display: none;
+}    
+input[type="radio"].toggle + label {
+    cursor: pointer;
+    min-width: 150px;
+}        
+input[type="radio"].toggle + label:hover {
+    /*background: none;*/
+    color: #1a1a1a;
+}
+input[type="radio"].toggle + label:after {
+    /*background: #1a1a1a;*/
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+    /*
+    font-size: 16px !important;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    */
+
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: left 200ms cubic-bezier(0.77, 0, 0.175, 1);
+    width: 100%;
+    z-index: -1;
+}
+
+input[type="radio"].toggle.toggle-left + label {
+    border-right: 0;
+    /*background: #a2ddd9;*/
+}
+input[type="radio"].toggle.toggle-left + label:after {
+  left: 100%
+}
+input[type="radio"].toggle.toggle-right + label {
+    margin-left: -5px;
+}
+
+input[type="radio"].toggle.toggle-right + label:after {
+    left: -100%;
+}
+
+input[type="radio"].toggle:checked + label {
+    cursor: default;
+    color: #fff;
+    transition: color 200ms;   
+}
+
+input[type="radio"].toggle:checked + label:after {
+    left: 0;    
+}
 
 /* ****************************** 
  VEGGIE

@@ -20,26 +20,81 @@
 
 	function getFormLine(index, first) {		
 		var btnType = first ? "add" : "sub";
-		var btnVal = first ? "+" : "-";
-		return `<div id="attend-form-line-${index}" class="row form-group">
-			<div class="col-md-4 col-sm-4">
-				<input type="input" class="form-control fname" id="attendee-fname-${index}" name="Vorname-${index}" placeholder="Vorname" />
-			</div>
-			<div class="col-md-3 col-sm-3">		
-				<input type="input" class="form-control lname" id="attendee-lname-${index}" name="Nachname-${index}" placeholder="Nachname" />
-			</div>		
-			<div class="col-md-2 col-sm-2">
-				<input type="input" class="form-control age" id="attendee-age-${index}" name="Alter-${index}" placeholder="Alter" />
-			</div>	
-			<div class="col-md-2 col-sm-2">
-				<div class="toggle-btn active">
-					<input type="checkbox" checked class="cb-value attend" name="Anwesend-${index}" value="Ja" />
-					<span class="round-btn"></span>
+		var btnVal = first ? "Hinzufügen" : "Entfernen";
+		var persNo = $("#attend-form-group .row").length + 1;
+		return `<div id="attend-form-line-${index}" class="row">
+
+				<div class="col-md-3 form-group">
+					<input type="input" class="form-control fname" id="attendee-fname-${index}" name="Vorname-${index}" placeholder="Vorname" />
 				</div>
-			</div>
-			<div class="col-md-1 col-sm-1">
-				<button id="attendee-add" class="btn btn-primary btn-block btn-control btn-${btnType}" type="button" data-id="${index}">${btnVal}</button>							
-			</div>
+
+				<div class="col-md-2 form-group">		
+					<input type="input" class="form-control lname" id="attendee-lname-${index}" name="Nachname-${index}" placeholder="Nachname" />
+				</div>	
+
+				<div class="col-md-2 form-group">
+					<input type="input" class="form-control age" id="attendee-age-${index}" name="Alter-${index}" placeholder="Alter (bis 12)" />
+				</div>	
+
+
+				<div class="col-md-4 form-group">
+				
+					<!-- first approach -->
+
+													
+					<label for="attendee-attend-${index}" class="attend-label form-check-label">Teilnahme:</label>
+					<div class="toggle-btn active">
+						<input id="attendee-attend-${index}" type="checkbox" checked class="cb-value attend form-check-input form-control" name="Anwesend-${index}" value="Ja" />
+						<span class="round-btn"></span>
+					</div>
+									
+
+					<!-- select box -->
+<!--
+					<select class="custom-select custom-select-lg form-control" id="inlineFormCustomSelect">
+        				<option selected value="Zusage" class="select-yes">Nimmt teil</option>
+        				<option value="Absage" class="select-no">Kommt nicht</option>
+      				</select>	      					
+      				-->
+
+      				<!-- simple radio -->
+<!--					
+					<div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+					  <label class="form-check-label" for="inlineRadio1">Teilnehmen</label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <label class="form-check-label" for="inlineRadio2">Zusagen</label>
+					</div>
+					-->
+					
+					<!-- simple switch -->
+<!--
+					<div class="form-group">
+						<label class="switch">
+							<input type="checkbox"/>
+							<span class="slider"></span>
+						</label>
+					</div>
+					-->
+
+					<!-- toggle yes/no -->
+					<!--
+					<div class="form-group">
+						<input id="toggle-on" class="toggle toggle-left form-control" name="Anwesend-${index}" value="JA" type="radio" checked>
+						<label for="toggle-on" class="toggle-btn">Nimmt teil</label>
+						<input id="toggle-off" class="toggle toggle-right form-control" name="Anwesend-${index}" value="NEIN" type="radio">
+						<label for="toggle-off" class="toggle-btn">Kommt nicht</label>					
+					</div>
+					-->
+
+				</div>
+
+				<div class="col-md-2 form-group">
+					<button id="attendee-add" class="btn btn-primary btn-block btn-control btn-${btnType}" type="button" data-id="${index}">${btnVal}</button>							
+				</div>
+
 		</div>`;		
 	}
 
