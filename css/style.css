@@ -1913,6 +1913,11 @@ div.rocket div {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
+
+#qbootstrap-started select.form-control {
+  color: #000;
+}
+
 #qbootstrap-started .form-control::-webkit-input-placeholder {
   color: #fff;
 }
@@ -1947,9 +1952,11 @@ div.rocket div {
   padding-right: 50px;
 }
 
-#qbootstrap-started .form-inline h3 {
+#qbootstrap-started h3 {
   font-family: "Source Sans Pro", Arial, sans-serif;
   color: #fff;
+  /*text-align: center;*/
+  /*padding-left: 10px;*/
 }
 
 #qbootstrap-started .form-inline .form-group {
@@ -1978,6 +1985,23 @@ div.rocket div {
 
 #qbootstrap-started button[type=submit] {
   width: 100%;
+}
+
+#qbootstrap-started .form-check-label {
+  color: #fff;
+}
+
+#qbootstrap-started label {
+  font-weight: normal;
+}
+
+#qbootstrap-started .form-check-inline {
+  display: inline-block;
+  padding: 5px;
+}
+
+#qbootstrap-started .attend-form-control {
+  padding-left: 5px;
 }
 
 /* Toggle: First approach */

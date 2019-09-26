@@ -60,6 +60,9 @@
 		
 		<link rel="stylesheet" href="css/style.css">
 
+		<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+  		<link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+
 		<!-- Modernizr JS -->
 		<script src="js/modernizr-2.6.2.min.js"></script>
 		<!-- FOR IE9 below -->
@@ -854,20 +857,122 @@
             </div>
 
 			<div class="row animate-box">
-				<div class="col-md-12">
+				<div class="col-md-12 col-md-offset-2">
 
-					<form id="attend-form" name="attendee" class="form-inline" method="POST" data-netlify="true" netlify-honeypot="phone">
+					<form id="attend-form" name="attendee" class="form" method="POST" data-netlify="true" netlify-honeypot="phone">
 
+						<div id="attend-form-group">							
+							<div class="col-md-10 form-group">
+								<h3>Person #1</h3>								
+								<div class="col-md-5">
+								    <div class="form-group">								      
+								      <input type="text" class="form-control" id="fname" placeholder="Vorname"  name="fname">
+								    </div>
+								    <div class="form-group">								      
+								      <input type="text" class="form-control" id="lname" placeholder="Nachname" name="lname">
+								    </div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">								      
+										<input type="text" class="form-control" id="age" placeholder="Alter (bei Kind)" name="age" />
+									</div>	
 
-						<div id="attend-form-group">
+									
+								    <div class="form-check form-check-inline">
+									  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+									  <label class="form-check-label" for="exampleRadios1">
+									    Nimmt teil
+									  </label>
+									</div>
+									<div class="form-check form-check-inline">
+									  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+									  <label class="form-check-label" for="exampleRadios2">
+									    Kommt nicht
+									  </label>
+									</div>
+									
+									
+<!-- 									<div class="form-group attend-form-control">
+										<label for="attendee-attend-${index}" class="attend-label form-check-label">Teilnahme:</label>
+										<div class="toggle-btn active">
+											<input id="attendee-attend-${index}" type="checkbox" checked class="cb-value attend form-check-input form-control" name="Anwesend-${index}" value="Ja" />
+											<span class="round-btn"></span>
+										</div>
+									</div> -->
+								
+								</div>
+
+								<div class="col-md-4">
+									<button id="attendee-add" class="btn btn-primary btn-block btn-control btn-sub" type="button" data-id="${index}">Person entfernen</button>	
+								</div>	
+							</div>
+						
+							<div class="col-md-10 form-group">
+								<h3>Person #2</h3>								
+								<div class="col-md-5">
+								    <div class="form-group">								      
+								      <input type="text" class="form-control" id="fname" placeholder="Vorname"  name="fname">
+								    </div>
+								    <div class="form-group">								      
+								      <input type="text" class="form-control" id="lname" placeholder="Nachname" name="lname">
+								    </div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">								      
+										<input type="text" class="form-control" id="age" placeholder="Alter (bei Kind)" name="age" />
+									</div>	
+
+									<div class="form-group attend-form-control">
+										<label for="attendee-attend-${index}" class="attend-label form-check-label">Teilnahme:</label>
+										<div class="toggle-btn active">
+											<input id="attendee-attend-${index}" type="checkbox" checked class="cb-value attend form-check-input form-control" name="Anwesend-${index}" value="Ja" />
+											<span class="round-btn"></span>
+										</div>
+									</div>
+								
+								</div>
+
+								<div class="col-md-4">
+									<button id="attendee-add" class="btn btn-primary btn-block btn-control btn-sub" type="button" data-id="${index}">Person entfernen</button>	
+								</div>	
+							</div>	
+
+							<div class="col-md-10 form-group">
+								<h3>Person #3</h3>								
+								<div class="col-md-5">
+								    <div class="form-group">								      
+								      <input type="text" class="form-control" id="fname" placeholder="Vorname"  name="fname">
+								    </div>
+								    <div class="form-group">								      
+								      <input type="text" class="form-control" id="lname" placeholder="Nachname" name="lname">
+								    </div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">								      
+										<input type="text" class="form-control" id="age" placeholder="Alter (bei Kind)" name="age" />
+									</div>	
+									<div class="form-group attend-form-control">
+										<label for="attendee-attend-${index}" class="attend-label form-check-label">Teilnahme:</label>
+										<div class="toggle-btn active">
+											<input id="attendee-attend-${index}" type="checkbox" checked class="cb-value attend form-check-input form-control" name="Anwesend-${index}" value="Ja" />
+											<span class="round-btn"></span>
+										</div>
+									</div>
+								
+								</div>
+
+								<div class="col-md-4">
+									<button id="attendee-add" class="btn btn-primary btn-block btn-control btn-sub" type="button" data-id="${index}">Person entfernen</button>	
+								</div>	
+							</div>
 						</div>
-
-
-						
-						
-						<div id="attendee-submit" class="row">
-							<!--<div class="col-md-4 col-sm-2 col-md-offset-4">-->
-							<div class="col-md-4 col-sm-2 col-sm-offset-0">
+							
+								
+						<div id="attendee-submit" class="form-group">
+							<div class="col-md-4">	
+								<button id="attendee-add" class="btn btn-primary btn-block btn-control btn-add" type="button" data-id="${index}">Weitere Person hinzufügen</button>
+							</div>
+							<div class="col-md-4">									
 								<button type="submit" class="btn btn-primary btn-block">Rückmeldung senden</button>							
 							</div>
 						</div>
@@ -1217,6 +1322,9 @@
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
+
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 

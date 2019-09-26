@@ -146,7 +146,7 @@
 	}
 
 	// first form line
-	addFormLine(true);
+	//addFormLine(true);
 
 	// add form line on add-button click
 	$("#attend-form-group .btn-add").click(function() {
@@ -202,6 +202,9 @@
 	});
 
 	/* <-- Form Line */
+
+
+	//$("#attend-form-group").slick();
 
 
 	// Carousel Feature Slide
