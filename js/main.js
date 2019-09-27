@@ -14,202 +14,8 @@
 	    );
 	};
 
-	/* Form Line --> */
-
-	const FORM_LINE_MAX_ROWS = 4;
-
-	function getFormLine(index, first) {		
-		var btnType = first ? "add" : "sub";
-		var btnVal = first ? "Hinzufügen" : "Entfernen";
-		var persNo = $("#attend-form-group .row").length + 1;
-		return `<div id="attend-form-line-${index}" class="row">
-
-				<div class="col-md-3 form-group">
-					<input type="input" class="form-control fname" id="attendee-fname-${index}" name="Vorname-${index}" placeholder="Vorname" />
-				</div>
-
-				<div class="col-md-2 form-group">		
-					<input type="input" class="form-control lname" id="attendee-lname-${index}" name="Nachname-${index}" placeholder="Nachname" />
-				</div>	
-
-				<div class="col-md-2 form-group">
-					<input type="input" class="form-control age" id="attendee-age-${index}" name="Alter-${index}" placeholder="Alter (bis 12)" />
-				</div>	
-
-
-				<div class="col-md-4 form-group">
-				
-					<!-- first approach -->
-
-													
-					<label for="attendee-attend-${index}" class="attend-label form-check-label">Teilnahme:</label>
-					<div class="toggle-btn active">
-						<input id="attendee-attend-${index}" type="checkbox" checked class="cb-value attend form-check-input form-control" name="Anwesend-${index}" value="Ja" />
-						<span class="round-btn"></span>
-					</div>
-									
-
-					<!-- select box -->
-<!--
-					<select class="custom-select custom-select-lg form-control" id="inlineFormCustomSelect">
-        				<option selected value="Zusage" class="select-yes">Nimmt teil</option>
-        				<option value="Absage" class="select-no">Kommt nicht</option>
-      				</select>	      					
-      				-->
-
-      				<!-- simple radio -->
-<!--					
-					<div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-					  <label class="form-check-label" for="inlineRadio1">Teilnehmen</label>
-					</div>
-					<div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-					  <label class="form-check-label" for="inlineRadio2">Zusagen</label>
-					</div>
-					-->
-					
-					<!-- simple switch -->
-<!--
-					<div class="form-group">
-						<label class="switch">
-							<input type="checkbox"/>
-							<span class="slider"></span>
-						</label>
-					</div>
-					-->
-
-					<!-- toggle yes/no -->
-					<!--
-					<div class="form-group">
-						<input id="toggle-on" class="toggle toggle-left form-control" name="Anwesend-${index}" value="JA" type="radio" checked>
-						<label for="toggle-on" class="toggle-btn">Nimmt teil</label>
-						<input id="toggle-off" class="toggle toggle-right form-control" name="Anwesend-${index}" value="NEIN" type="radio">
-						<label for="toggle-off" class="toggle-btn">Kommt nicht</label>					
-					</div>
-					-->
-
-				</div>
-
-				<div class="col-md-2 form-group">
-					<button id="attendee-add" class="btn btn-primary btn-block btn-control btn-${btnType}" type="button" data-id="${index}">${btnVal}</button>							
-				</div>
-
-		</div>`;		
-	}
-
-	function random() {
-		return generateId(5);
-	}
-
-	function generateId(length) {
-   		var result = '';
-   		var characters = '0123456789';
-   		var charactersLength = characters.length;
-   		for (var i = 0; i < length; i++) {
-      		result += characters.charAt(Math.floor(Math.random() * charactersLength));
-   		}
-   		return result;
-	}
-
-	function addFormLine(first) {			
-
-		// abort if full
-		if ($("#attend-form-group .row").length == FORM_LINE_MAX_ROWS) {
-			return;		
-		}	
-
-		// add the line
-		$("#attend-form-group").append(getFormLine(random(), first));		
-
-		// if not the first row, add a delete button
-		if (!first) {
-			$("#attend-form-group .btn-sub").click(function() {								
-				removeFormLine($(this).attr("data-id"));
-			});
-		}
-
-		// add a click handler for every cb
-		$(".cb-value").click(function() {	
-    		var mainParent = $(this).parent('.toggle-btn');
-        	if($(mainParent).find('input.cb-value').is(':checked')) {
-    			$(mainParent).addClass('active');
-  			} else {  			
-    			$(mainParent).removeClass('active');
-  			}
-		});
-	}
-
-	// remove form line on sub-button click
-	function removeFormLine(index) {				
-		$("#attend-form-line-" + index).remove();		
-	}
-
-	// first form line
-	//addFormLine(true);
-
-	// add form line on add-button click
-	$("#attend-form-group .btn-add").click(function() {
-		addFormLine(false);
-	});
-
-
-	// submit logic
-
-    $("#attendee-success-alert").hide();
-
-	$("#attend-form").submit(function(e) {
-		e.preventDefault();
-		var $form = $(this);
-
-		let success = true;
-
-		$("#attend-form-group .row").each(function() {	  		  
-			var fname = $(this).find("input.fname").val();
-			var lname = $(this).find("input.lname").val();
-			var age = $(this).find("input.age").val();	  	
-			
-			if (fname === "") {	  		
-				$(this).find("input.fname").addClass("error");
-				success = false;
-			} else {	  	
-				$(this).find("input.fname").removeClass("error");
-			}
-			if (lname === "") {
-				$(this).find("input.lname").addClass("error");
-				success = false;
-			} else {
-				$(this).find("input.lname").removeClass("error");
-			}
-			if (age > 12) {
-				$(this).find("input.age").addClass("error");
-				success = false;
-			} else {
-				$(this).find("input.age").removeClass("error");
-			}	  	
-		});
-
-		// on success
-		if (success) {
-			alert("SUCCESS!!!");
-			// $.post($form.attr("action"), $form.serialize()).then(function() {
-			// 	$("#attendee-success-alert").fadeTo(2000, 500).slideUp(500, function() {
-			// 		$("#attendee-success-alert").slideUp(500);
-			// 	});
-			// });
-		}
-
-	});
-
-	/* <-- Form Line */
-
-
-	//$("#attend-form-group").slick();
-
-
 	// Carousel Feature Slide
-	var testimonialCarousel = function(){
-		
+	var testimonialCarousel = function(){	
 		var owl = $('.owl-carousel-fullwidth');
 		owl.owlCarousel({
 			animateOut: 'fadeOut',
@@ -263,9 +69,21 @@
 
 	  	});
 
+	  	$('#qbootstrap-slider-responsum .flexslider').flexslider({
+			animation: "none",
+			slideshow: false,
+			directionNav: true,
+			controlNav: false,
+			prevText: "",
+			nextText: "",
+			start: function(){
+			},
+			before: function(){
+			}
+
+	  	});	  		  
+       
 	};
-
-
 
 	// animate-box
 	var contentWayPoint = function() {
@@ -515,6 +333,169 @@
 		contentWayPoint();
 		inlineSVG();
 		bgVideo();
+
+
+
+		/* Form Line --> */
+
+		const FORM_MAX_PEOPLE = 4;
+
+		function buildFormPerson(index, first) {		
+			var btnType = first ? "add" : "sub";
+			var btnVal = first ? "Hinzufügen" : "Entfernen";
+
+			//var persNo = $("#attend-form-group .row").length + 1;
+			var persNo = $("#qbootstrap-slider-responsum ul li").length + 1;
+			return `
+				<div class="col-md-10 form-group">
+					    <div class="row">
+				    	<h3>Person #${persNo}</h3>								
+				    </div>
+				    <div class="row">	
+				    	<div class="col-md-5">
+				    	    <div class="form-group">								      
+				    	      <input type="text" class="form-control" id="fname" placeholder="Vorname" name="fname">
+				    	    </div>
+				    	    <div class="form-group">								      
+				    	      <input type="text" class="form-control" id="lname" placeholder="Nachname" name="lname">
+				    	    </div>
+				    	</div>
+				    	<div class="col-md-3">
+				    		<div class="form-group">								      
+				    			<input type="text" class="form-control" id="age" placeholder="Alter (bei Kind)" name="age" />
+				    		</div>									
+				    	    <div class="form-check form-check-inline">
+				    		  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+				    		  <label class="form-check-label" for="exampleRadios1">
+				    		    Nimmt teil
+				    		  </label>
+				    		</div>
+				    		<div class="form-check form-check-inline">
+				    		  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+				    		  <label class="form-check-label" for="exampleRadios2">
+				    		    Kommt nicht
+				    		  </label>
+				    		</div>							
+				    	</div>
+				    </div>	
+
+				    <div class="col-md-4">
+				    	<button id="attendee-add" class="btn btn-primary btn-block btn-control btn-sub" type="button" data-id="${index}">Person entfernen</button>	
+				    </div>
+				</div>`;			
+		}
+
+		function random() {
+			return generateId(5);
+		}
+
+		function generateId(length) {
+	   		var result = '';
+	   		var characters = '0123456789';
+	   		var charactersLength = characters.length;
+	   		for (var i = 0; i < length; i++) {
+	      		result += characters.charAt(Math.floor(Math.random() * charactersLength));
+	   		}
+	   		return result;
+		}
+
+		function addFormPerson(first) {			
+
+			var slider = $('#qbootstrap-slider-responsum .flexslider').data("flexslider");
+
+			// abort if full
+			if ($("#qbootstrap-slider-responsum ul li").length == FORM_MAX_PEOPLE) {
+				alert("too much");
+				return;		
+			}	
+
+			// https://stackoverflow.com/questions/27542147/dynamic-add-slide-in-flexslider-carousel
+			//var div = "<li> How are you</li>";
+	    	//$('#qbootstrap-slider-responsum .flexslider').data("flexslider").addSlide($(div));
+
+			// add the line
+			slider.addSlide($(buildFormPerson(random(), first)));		
+
+			//TODO use slider
+
+			// if not the first row, add a delete button
+			if (!first) {
+				/*
+				$("#attend-form-group .btn-sub").click(function() {								
+					removeFormPerson($(this).attr("data-id"));
+				});
+				*/
+			}
+
+		}
+
+		// remove form line on sub-button click
+		function removeFormPerson(index) {				
+			//$("#attend-form-line-" + index).remove();		
+
+			//TODO use slider
+		}
+
+		// first form line
+		addFormPerson(true);
+
+		// add form line on add-button click
+		/*
+		$("#attend-form-group .btn-add").click(function() {
+			addFormPerson(false);
+		});
+		*/
+
+
+		// submit logic
+
+	    $("#attendee-success-alert").hide();
+
+		$("#attend-form").submit(function(e) {
+			e.preventDefault();
+			var $form = $(this);
+
+			let success = true;
+
+			$("#attend-form-group .row").each(function() {	  		  
+				var fname = $(this).find("input.fname").val();
+				var lname = $(this).find("input.lname").val();
+				var age = $(this).find("input.age").val();	  	
+				
+				if (fname === "") {	  		
+					$(this).find("input.fname").addClass("error");
+					success = false;
+				} else {	  	
+					$(this).find("input.fname").removeClass("error");
+				}
+				if (lname === "") {
+					$(this).find("input.lname").addClass("error");
+					success = false;
+				} else {
+					$(this).find("input.lname").removeClass("error");
+				}
+				if (age > 12) {
+					$(this).find("input.age").addClass("error");
+					success = false;
+				} else {
+					$(this).find("input.age").removeClass("error");
+				}	  	
+			});
+
+			// on success
+			if (success) {
+				alert("SUCCESS!!!");
+				// $.post($form.attr("action"), $form.serialize()).then(function() {
+				// 	$("#attendee-success-alert").fadeTo(2000, 500).slideUp(500, function() {
+				// 		$("#attendee-success-alert").slideUp(500);
+				// 	});
+				// });
+			}
+
+		});
+
+		/* <-- Form Line */
+
 	});
 
 
