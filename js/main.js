@@ -53,7 +53,7 @@
 	  	$('#qbootstrap-slider-veggie .flexslider').flexslider({
 			animation: "fade",
 			slideshowSpeed: 17000,
-			directionNav: true,
+			directionNav: true,			
 			start: function(){
 				setTimeout(function(){
 					$('.slider-text').removeClass('animated fadeInUp');
@@ -70,54 +70,234 @@
 	  	});
 
 	  	$('#qbootstrap-slider-responsum .flexslider').flexslider({
-			animation: "none",
+			animation: "slide",
 			slideshow: false,
+			animationLoop: false,
 			directionNav: true,
-			controlNav: false,
+			controlNav: true,
 			prevText: "",
 			nextText: "",
-			start: function(){
+			start: function(slider) {
+				slider.removeSlide(0);
 			},
-			before: function(){
+			before: function(slider) {
+				//alert(slider.index);
+				//alert(slider.currentSlide);
 			}
 
-	  	});	  		  
+	  	}).ready(function() { 
+
+	  		function getTotalSlideCount() {
+				var total = $('#qbootstrap-slider-responsum .form-person').length;
+				return total;
+	  		}	  		
+
+		  	var slider = $('#qbootstrap-slider-responsum .flexslider').data("flexslider");
+
+
+			const FORM_MAX_PEOPLE = 4;
+
+			var slides = []
+			for (var i = 0; i < FORM_MAX_PEOPLE; i++) {
+				slides.push(false);
+			}
+
+
+			/**
+			 * ADD
+			 */
+
+
+			// add  person
+			$("#attendee-add").click(function() {
+				//alert("add");
+				addFormPerson(false);
+			});
+
+			function addFormPerson(first) {			
+				// abort if full
+				if (getTotalSlideCount() == FORM_MAX_PEOPLE) {
+					alert("Maximum erreicht!");
+					return;		
+				}	
+
+				// https://stackoverflow.com/questions/27542147/dynamic-add-slide-in-flexslider-carousel
+				// add the line
+				slider.addSlide($('<li>' + buildFormPerson(first) + '</li>'));	
+			}
+
+			function buildFormPerson(first) {		
+				var btnType = first ? "add" : "sub";
+				var btnVal = first ? "Hinzufügen" : "Entfernen";
+
+				//var persNo = getTotalSlideCount() + 1;				
+				function getFreePersNo() {
+					if (slides.length > 0) {
+						for (var i = 0; i < FORM_MAX_PEOPLE; i++) {
+							if (!slides[i]) {
+								slides[i] = true;
+								return i;
+							}
+						}
+					}
+					return 0;
+				}
+
+				var persNo = getFreePersNo() + 1;
+
+				return `
+					<div class="col-md-10 form-group form-person">
+						<div class="row">
+					    	<h3>Person #${persNo}</h3>								
+					    </div>
+					    <div class="row">	
+					    	<div class="col-md-5">
+					    	    <div class="form-group">								      
+					    	      <input type="text" class="form-control" id="fname-${persNo}" placeholder="Vorname" name="fname-${persNo}">
+					    	    </div>
+					    	    <div class="form-group">								      
+					    	      <input type="text" class="form-control" id="lname-${persNo}" placeholder="Nachname" name="lname-${persNo}">
+					    	    </div>
+					    	</div>
+					    	<div class="col-md-3">
+					    		<div class="form-group">								      
+					    			<input type="text" class="form-control" id="age-${persNo}" placeholder="Alter (falls Kind)" name="age-${persNo}" />
+					    		</div>									
+					    	    <div class="form-check form-check-inline">
+					    		  <input class="form-check-input" type="radio" name="attend-${persNo}" id="attend-confirm-${persNo}" value="Nimmt teil" checked>
+					    		  <label class="form-check-label" for="attend-confirm-${persNo}">
+					    		    Nimmt teil
+					    		  </label>
+					    		</div>
+					    		<div class="form-check form-check-inline">
+					    		  <input class="form-check-input" type="radio" name="attend-${persNo}" id="attend-cancel-${persNo}" value="Kommt nicht">
+					    		  <label class="form-check-label" for="attend-cancel-${persNo}">
+					    		    Kommt nicht
+					    		  </label>
+					    		</div>							
+					    	</div>
+					    </div>	
+					</div>`;			
+			}
+
+			/*
+			function random() {
+				return generateId(5);
+			}
+
+			function generateId(length) {
+		   		var result = '';
+		   		var characters = '0123456789';
+		   		var charactersLength = characters.length;
+		   		for (var i = 0; i < length; i++) {
+		      		result += characters.charAt(Math.floor(Math.random() * charactersLength));
+		   		}
+		   		return result;
+			}
+			*/
+
+			/**
+			 * REMOVE
+			 */
+
+			// remove person
+			$(".btn-sub").click(function() {
+				//alert("sub");
+				//var index = $('#qbootstrap-slider-responsum li:has(.flex-active)').index('.flex-control-nav li') + 1;				
+				//alert(index);
+				removeFormPerson(); 
+			});	
+
+
+			// remove form line on sub-button click
+			function removeFormPerson(index) {				
+				//$("#attend-form-line-" + index).remove();		
+				//TODO use slider
+				slider.removeSlide(slider.currentSlide);
+				slides[index] = false;
+			}
+
+			// first form line
+			addFormPerson(true);
+			
+
+
+
+			// submit logic
+
+		    //$("#attendee-success-alert").hide();
+
+			$("#attend-form").submit(function(e) {
+				e.preventDefault();
+				var $form = $(this);
+
+				let success = true;
+/*
+				$("#attend-form-group .row").each(function() {	  		  
+					var fname = $(this).find("input.fname").val();
+					var lname = $(this).find("input.lname").val();
+					var age = $(this).find("input.age").val();	  	
+					
+					if (fname === "") {	  		
+						$(this).find("input.fname").addClass("error");
+						success = false;
+					} else {	  	
+						$(this).find("input.fname").removeClass("error");
+					}
+					if (lname === "") {
+						$(this).find("input.lname").addClass("error");
+						success = false;
+					} else {
+						$(this).find("input.lname").removeClass("error");
+					}
+					if (age > 12) {
+						$(this).find("input.age").addClass("error");
+						success = false;
+					} else {
+						$(this).find("input.age").removeClass("error");
+					}	  	
+				});
+				*/
+
+				// on success
+				if (success) {
+					alert("SUCCESS!!!");
+					// $.post($form.attr("action"), $form.serialize()).then(function() {
+					// 	$("#attendee-success-alert").fadeTo(2000, 500).slideUp(500, function() {
+					// 		$("#attendee-success-alert").slideUp(500);
+					// 	});
+					// });
+				}
+
+			});
+
+			/* <-- Form Line */ 
+
+		});		  
        
 	};
 
 	// animate-box
 	var contentWayPoint = function() {
-
 		$('.animate-box').waypoint( function( direction ) {
-
 			if( direction === 'down' && !$(this).hasClass('animated') ) {
-			
 				$(this.element).addClass('fadeInUp animated');
-			
 			}
-
 		} , { offset: '75%' } );
-
 	};
 
 
 	// Burger Menu
 	var burgerMenu = function() {
-
 		$('body').on('click', '.js-qbootstrap-nav-toggle', function(event){
-
 			if ( $('#navbar').is(':visible') ) {
 				$(this).removeClass('active');	
 			} else {
 				$(this).addClass('active');	
 			}
-
 			event.preventDefault();
-			
 		});
-
 	};
-
 
 	// Parallax
 	var parallax = function() {
@@ -125,8 +305,6 @@
 			$(window).stellar();
 		}
 	};
-
-
 
 	// Page Nav
 	var clickMenu = function() {
@@ -336,165 +514,7 @@
 
 
 
-		/* Form Line --> */
 
-		const FORM_MAX_PEOPLE = 4;
-
-		function buildFormPerson(index, first) {		
-			var btnType = first ? "add" : "sub";
-			var btnVal = first ? "Hinzufügen" : "Entfernen";
-
-			//var persNo = $("#attend-form-group .row").length + 1;
-			var persNo = $("#qbootstrap-slider-responsum ul li").length + 1;
-			return `
-				<div class="col-md-10 form-group">
-					    <div class="row">
-				    	<h3>Person #${persNo}</h3>								
-				    </div>
-				    <div class="row">	
-				    	<div class="col-md-5">
-				    	    <div class="form-group">								      
-				    	      <input type="text" class="form-control" id="fname" placeholder="Vorname" name="fname">
-				    	    </div>
-				    	    <div class="form-group">								      
-				    	      <input type="text" class="form-control" id="lname" placeholder="Nachname" name="lname">
-				    	    </div>
-				    	</div>
-				    	<div class="col-md-3">
-				    		<div class="form-group">								      
-				    			<input type="text" class="form-control" id="age" placeholder="Alter (bei Kind)" name="age" />
-				    		</div>									
-				    	    <div class="form-check form-check-inline">
-				    		  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-				    		  <label class="form-check-label" for="exampleRadios1">
-				    		    Nimmt teil
-				    		  </label>
-				    		</div>
-				    		<div class="form-check form-check-inline">
-				    		  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-				    		  <label class="form-check-label" for="exampleRadios2">
-				    		    Kommt nicht
-				    		  </label>
-				    		</div>							
-				    	</div>
-				    </div>	
-
-				    <div class="col-md-4">
-				    	<button id="attendee-add" class="btn btn-primary btn-block btn-control btn-sub" type="button" data-id="${index}">Person entfernen</button>	
-				    </div>
-				</div>`;			
-		}
-
-		function random() {
-			return generateId(5);
-		}
-
-		function generateId(length) {
-	   		var result = '';
-	   		var characters = '0123456789';
-	   		var charactersLength = characters.length;
-	   		for (var i = 0; i < length; i++) {
-	      		result += characters.charAt(Math.floor(Math.random() * charactersLength));
-	   		}
-	   		return result;
-		}
-
-		function addFormPerson(first) {			
-
-			var slider = $('#qbootstrap-slider-responsum .flexslider').data("flexslider");
-
-			// abort if full
-			if ($("#qbootstrap-slider-responsum ul li").length == FORM_MAX_PEOPLE) {
-				alert("too much");
-				return;		
-			}	
-
-			// https://stackoverflow.com/questions/27542147/dynamic-add-slide-in-flexslider-carousel
-			//var div = "<li> How are you</li>";
-	    	//$('#qbootstrap-slider-responsum .flexslider').data("flexslider").addSlide($(div));
-
-			// add the line
-			slider.addSlide($(buildFormPerson(random(), first)));		
-
-			//TODO use slider
-
-			// if not the first row, add a delete button
-			if (!first) {
-				/*
-				$("#attend-form-group .btn-sub").click(function() {								
-					removeFormPerson($(this).attr("data-id"));
-				});
-				*/
-			}
-
-		}
-
-		// remove form line on sub-button click
-		function removeFormPerson(index) {				
-			//$("#attend-form-line-" + index).remove();		
-
-			//TODO use slider
-		}
-
-		// first form line
-		addFormPerson(true);
-
-		// add form line on add-button click
-		/*
-		$("#attend-form-group .btn-add").click(function() {
-			addFormPerson(false);
-		});
-		*/
-
-
-		// submit logic
-
-	    $("#attendee-success-alert").hide();
-
-		$("#attend-form").submit(function(e) {
-			e.preventDefault();
-			var $form = $(this);
-
-			let success = true;
-
-			$("#attend-form-group .row").each(function() {	  		  
-				var fname = $(this).find("input.fname").val();
-				var lname = $(this).find("input.lname").val();
-				var age = $(this).find("input.age").val();	  	
-				
-				if (fname === "") {	  		
-					$(this).find("input.fname").addClass("error");
-					success = false;
-				} else {	  	
-					$(this).find("input.fname").removeClass("error");
-				}
-				if (lname === "") {
-					$(this).find("input.lname").addClass("error");
-					success = false;
-				} else {
-					$(this).find("input.lname").removeClass("error");
-				}
-				if (age > 12) {
-					$(this).find("input.age").addClass("error");
-					success = false;
-				} else {
-					$(this).find("input.age").removeClass("error");
-				}	  	
-			});
-
-			// on success
-			if (success) {
-				alert("SUCCESS!!!");
-				// $.post($form.attr("action"), $form.serialize()).then(function() {
-				// 	$("#attendee-success-alert").fadeTo(2000, 500).slideUp(500, function() {
-				// 		$("#attendee-success-alert").slideUp(500);
-				// 	});
-				// });
-			}
-
-		});
-
-		/* <-- Form Line */
 
 	});
 
