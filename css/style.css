@@ -570,7 +570,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: none;
   background: transparent;
   border: 2px solid rgba(0, 0, 0, 0.1);
-  height: 54px;
+  height: 60px;
   font-size: 18px;
   font-weight: 300;
 }
@@ -1941,7 +1941,7 @@ div.rocket div {
 }
 
 #qbootstrap-started .btn {
-  height: 54px;
+  height: 60px;
   border: none;
   background: #e996a3;
   color: #fff;
@@ -2379,6 +2379,72 @@ input[type="radio"].toggle:checked + label:after {
 }
 
 
+/* The new stuff. Remove the old. */
+
+#qbootstrap-started .form-control {
+  text-align: center;
+  color: #fff !important;  
+}
+
+#qbootstrap-started select {
+  color: #fff;
+}
+
+#qbootstrap-started .ui-selectmenu-button {
+  text-align: center;
+  box-shadow: none;
+  background: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  height: 60px;
+  font-size: 18px;
+  font-weight: 300;
+
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 16px !important;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;  
+}
+
+.ui-menu {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.ui-button .ui-icon {
+  /*background-image: none !important;*/
+  background-image: url(https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/images/ui-icons_444444_256x240.png) !important;
+}
+
+/*
+.ui-button:hover {
+  border: 1px solid #000 !important;
+}
+
+.ui-button:focus {
+ border: 1px solid #000 !important; 
+}
+*/
+
+.ui-widget {
+  font-family: inherit !important;
+}
+
+.ui-state-active {
+  border: #aaa !important;
+  /*background: #ccc !important;*/
+  background: #e996a3 !important;
+}
+
+.ui-selectmenu-button :active, #qbootstrap-started .ui-selectmenu-button :focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #e996a3 !important;
+}
 
 
 
