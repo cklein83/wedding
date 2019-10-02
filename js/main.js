@@ -70,6 +70,7 @@
 
 	  	});
 
+        /*
 	  	$('#qbootstrap-slider-responsum .flexslider').flexslider({
 			animation: "slide",
 			slideshow: false,
@@ -87,7 +88,7 @@
 			}
 
 	  	}).ready(function() { 
-
+			
 	  		function getTotalSlideCount() {
 				var total = $('#qbootstrap-slider-responsum .form-person').length;
 				return total;
@@ -101,11 +102,9 @@
 			for (var i = 0; i < FORM_MAX_PEOPLE; i++) {
 				slides.push(false);
 			}
-
-			/**
-			 * ADD
-			 */
-
+			
+			// ADD
+			 
 			// add  person
 			$("#attendee-add").click(function() {
 				//alert("add");
@@ -175,25 +174,23 @@
 					</div>`;			
 			}
 
-			/*
-			function random() {
-				return generateId(5);
-			}
+			
+			// function random() {
+			// 	return generateId(5);
+			// }
 
-			function generateId(length) {
-		   		var result = '';
-		   		var characters = '0123456789';
-		   		var charactersLength = characters.length;
-		   		for (var i = 0; i < length; i++) {
-		      		result += characters.charAt(Math.floor(Math.random() * charactersLength));
-		   		}
-		   		return result;
-			}
-			*/
-
-			/**
-			 * REMOVE
-			 */
+			// function generateId(length) {
+		 //   		var result = '';
+		 //   		var characters = '0123456789';
+		 //   		var charactersLength = characters.length;
+		 //   		for (var i = 0; i < length; i++) {
+		 //      		result += characters.charAt(Math.floor(Math.random() * charactersLength));
+		 //   		}
+		 //   		return result;
+			// }
+			
+			
+			// REMOVE			
 
 			// remove person
 			$(".btn-sub").click(function() {
@@ -212,61 +209,31 @@
 			}
 
 			// first form line
-			//addFormPerson(true);
-			
-
-			// submit logic
-
-		    //$("#attendee-success-alert").hide();
-
-			$("#attend-form").submit(function(e) {
-				e.preventDefault();
-				var $form = $(this);
-
-				let success = true;
-/*
-				$("#attend-form-group .row").each(function() {	  		  
-					var fname = $(this).find("input.fname").val();
-					var lname = $(this).find("input.lname").val();
-					var age = $(this).find("input.age").val();	  	
-					
-					if (fname === "") {	  		
-						$(this).find("input.fname").addClass("error");
-						success = false;
-					} else {	  	
-						$(this).find("input.fname").removeClass("error");
-					}
-					if (lname === "") {
-						$(this).find("input.lname").addClass("error");
-						success = false;
-					} else {
-						$(this).find("input.lname").removeClass("error");
-					}
-					if (age > 12) {
-						$(this).find("input.age").addClass("error");
-						success = false;
-					} else {
-						$(this).find("input.age").removeClass("error");
-					}	  	
-				});
-				*/
-
-				// on success
-				if (success) {
-					alert("SUCCESS!!!");
-					// $.post($form.attr("action"), $form.serialize()).then(function() {
-					// 	$("#attendee-success-alert").fadeTo(2000, 500).slideUp(500, function() {
-					// 		$("#attendee-success-alert").slideUp(500);
-					// 	});
-					// });
-				}
-
-			});
-
-			/* <-- Form Line */ 
+			//addFormPerson(true);		
 
 		});		  
-       
+        */
+
+    	// submit logic
+
+	    //$("#attendee-success-alert").hide();
+
+		$("#attend-form").submit(function(e) {
+			e.preventDefault();
+			var $form = $(this);
+
+			let success = true;
+
+			// on success
+			if (success) {
+				alert("SUCCESS!!!");
+				// $.post($form.attr("action"), $form.serialize()).then(function() {
+				// 	$("#attendee-success-alert").fadeTo(2000, 500).slideUp(500, function() {
+				// 		$("#attendee-success-alert").slideUp(500);
+				// 	});
+				// });
+			}
+		});
 	};
 
 	// animate-box
@@ -345,7 +312,6 @@
 		  	offset: function() { return -$(this.element).height() + 155; }
 		});
 	};
-
 
 	// Window Scroll
 	var windowScroll = function() {
