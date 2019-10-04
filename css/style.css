@@ -1979,6 +1979,21 @@ div.rocket div {
   padding-right: 50px;
 }
 
+/*
+#qbootstrap-started .btn.btn-primary.btn-yes {
+  background: #f0fff0;
+  color: #000;
+}
+*/
+
+#qbootstrap-started .btn-yes span {
+  margin-left: 10px;
+}
+
+#qbootstrap-started .btn-no span {
+  margin-left: 10px;
+}
+
 #qbootstrap-started h3 {
   font-family: "Source Sans Pro", Arial, sans-serif;
   color: #fff;
