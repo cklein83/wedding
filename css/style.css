@@ -1170,7 +1170,7 @@ div.rocket div {
 .couple.groom {
   position: relative;
   z-index: 0;
-  min-height: 1450px;
+  /*min-height: 1415px;*/
 }
 
 @media screen and (max-width: 1000px) {
@@ -1193,7 +1193,7 @@ div.rocket div {
 .couple.bride {
   position: relative;
   z-index: 0;
-  min-height: 1450px;
+  /*min-height: 1415px;*/
 }
 
 @media screen and (max-width: 1000px) {
@@ -1225,6 +1225,7 @@ div.rocket div {
 }
 .couple .desc {
   z-index: 1;
+  margin-bottom: 100px;
 }
 .couple .desc h2 {
   color: #e996a3;
@@ -1232,7 +1233,34 @@ div.rocket div {
   margin-bottom: 30px;
 }
 
+/*.couple .social {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -25px;
+  width: 50px;
+}*/
 
+@media screen and (min-width: 1000px) {
+  .couple .social {
+      position: absolute;
+      margin-top: 50px;
+      bottom: 50px;
+      left: 50%;
+      margin-left: -25px;
+      width: 50px;      
+  }
+}  
+
+@media screen and (min-width: 768px) {
+  #qbootstrap-groom-bride .couple-row {
+    display: flex;
+  }
+
+  #qbootstrap-groom-bride .couple-col {
+    display: flex;
+  }
+}
 
 /* ****************************** 
  LOVE STORY
@@ -1522,6 +1550,23 @@ div.rocket div {
   color: white;
   text-decoration: none;
 }
+
+@media screen and (min-width: 768px) {
+  #qbootstrap-testimonials .row.testimony {
+    display: flex;
+  }
+
+  #qbootstrap-testimonials .box-testimony-wrap {
+    display: flex;
+    flex: 1;
+  }
+
+  #qbootstrap-testimonials .box-testimony {
+    display: flex;
+    flex: 1;
+  }
+}
+
 #qbootstrap-testimonials .box-testimony blockquote {
   padding-left: 0;
   border-left: none;
@@ -1535,7 +1580,8 @@ div.rocket div {
   -ms-border-radius: 4px;
   border-radius: 4px;
 
-  min-height: 1370px;
+  /*min-height: 1370px;*/
+  flex: 1;
 }
 
 #qbootstrap-testimonials .box-testimony blockquote h3 {  
@@ -1543,11 +1589,13 @@ div.rocket div {
   color: #7f7f7f;
 }
 
-@media screen and (max-width: 1000px) {
+/*
+@media screen and (max-width: 0px) {
   #qbootstrap-testimonials .box-testimony blockquote {
     min-height: auto;
   }
 }
+*/
 
 #qbootstrap-testimonials .box-testimony blockquote:after {
   content: "";
@@ -1689,6 +1737,7 @@ div.rocket div {
 
 .witness-shiri .desc {
   z-index: 1;
+  /*margin-bottom: 100px;*/
 }
 .witness-shiri .desc h2 {
   color: #e996a3;
@@ -1703,9 +1752,12 @@ div.rocket div {
   width: 45%;
 }
 
-
-
 /* Trauzeugen */
+
+.witness .row {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .witness img {
   width: 192px;
@@ -1749,13 +1801,12 @@ div.rocket div {
 
   padding: 40px;
 }
-/*
-@media screen and (max-width: 1000px) {
-  .witness {
-    min-height: 400px;
+
+@media screen and (min-width: 768px) {
+  .witness-box {
+    min-height: 490px;
   }
 }
-*/
 
 .witness-box:after {
   position: absolute;
@@ -1783,6 +1834,29 @@ div.rocket div {
   width: 45%;
 }
 
+.witness-box {
+  position: relative;
+}
+
+.witness-box .social {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+}
+
+/*
+@media screen and (min-width: 1000px) {
+  .witness-box .social {
+      position: absolute;
+      margin-top: 50px;
+      bottom: 50px;
+      left: 50%;
+      margin-left: -25px;
+      width: 200px;      
+  }
+}
+*/
+
 /* --- */
 
 .witness.bridesmaid img {
@@ -1808,6 +1882,9 @@ div.rocket div {
 .goodman .witness-box:after {
   background: #f0fff0 !important;
 }
+
+
+
 
 /* ****************************** 
  LOCATION
@@ -1839,6 +1916,8 @@ div.rocket div {
   position: relative;
   z-index: 0;  
   min-height: 680px;
+
+  margin-bottom: 100px;
 }
 .wedding-events .desc:after {
   position: absolute;
@@ -2159,6 +2238,14 @@ div.rocket div {
   /*color: #fff;*/
 }
 
+#qbootstrap-veggie .section-heading img {
+  margin-top: 15px;
+}
+
+#qbootstrap-veggie .section-heading {
+  padding-bottom: 0;
+}
+
 #qbootstrap-veggie {
   /*background: #e996a3;*/
   z-index: 0 !important;
@@ -2263,6 +2350,7 @@ div.rocket div {
 
 .veggie-quote .desc {
   z-index: 1;
+  margin-bottom: 100px;
 }
 .veggie-quote .desc h2 {
   color: #e996a3;
@@ -2562,6 +2650,10 @@ div.rocket div {
 
 #qbootstrap-gallery {
   padding-top: 60px;
+}
+
+button.mfp-close {
+  background: #e996a3;
 }
 
 
