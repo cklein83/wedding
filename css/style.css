@@ -704,6 +704,10 @@ div.rocket div {
 }
 
 
+
+
+
+
 /* ****************************** 
  PROLOG
 ****************************** */
@@ -1173,11 +1177,13 @@ div.rocket div {
   /*min-height: 1415px;*/
 }
 
+/*
 @media screen and (max-width: 1000px) {
   .couple.groom {
     min-height: 600px;
   }
 }
+*/
 
 .couple.groom:after {
   position: absolute;
@@ -1196,11 +1202,13 @@ div.rocket div {
   /*min-height: 1415px;*/
 }
 
+/*
 @media screen and (max-width: 1000px) {
   .couple.bride {
     min-height: 600px;
   }
 }
+*/
 
 .couple.bride:after {
   position: absolute;
@@ -1212,6 +1220,7 @@ div.rocket div {
   background: #ffeff1;
   z-index: -1;
 }
+
 .couple img {
   width: 300px;
   margin: 0 auto;
@@ -1224,8 +1233,7 @@ div.rocket div {
   border-radius: 50%;
 }
 .couple .desc {
-  z-index: 1;
-  margin-bottom: 100px;
+  z-index: 1;  
 }
 .couple .desc h2 {
   color: #e996a3;
@@ -1241,6 +1249,7 @@ div.rocket div {
   width: 50px;
 }*/
 
+/*
 @media screen and (min-width: 1000px) {
   .couple .social {
       position: absolute;
@@ -1261,6 +1270,7 @@ div.rocket div {
     display: flex;
   }
 }
+*/
 
 /* ****************************** 
  LOVE STORY
@@ -1792,21 +1802,37 @@ div.rocket div {
   }
 }
 
+/* --- */
+
 .witness-box {
   border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 0;
-  /*min-height: 600px;*/
   margin-top: 30px;
-
-  padding: 40px;
+  padding: 40px;    
 }
 
-@media screen and (min-width: 768px) {
-  .witness-box {
-    min-height: 490px;
-  }
+.witness-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
+
+.witness-box .desc {
+  display: flex;
+  flex-direction: column;
+  flex: 1;  
+}
+
+.witness-box .vbottom {
+  display: flex;
+  align-items: flex-end;    
+  justify-content: center; 
+  flex: 1;                      
+}
+
+/* --- */
+
 
 .witness-box:after {
   position: absolute;
@@ -1833,29 +1859,6 @@ div.rocket div {
   margin-bottom: 30px;
   width: 45%;
 }
-
-.witness-box {
-  position: relative;
-}
-
-.witness-box .social {
-  position: absolute;
-  bottom: 50px;
-  left: 0;
-}
-
-/*
-@media screen and (min-width: 1000px) {
-  .witness-box .social {
-      position: absolute;
-      margin-top: 50px;
-      bottom: 50px;
-      left: 50%;
-      margin-left: -25px;
-      width: 200px;      
-  }
-}
-*/
 
 /* --- */
 
@@ -1884,7 +1887,25 @@ div.rocket div {
 }
 
 
+/* Equal Box-Height ---> */
+/*
+.witness-row {
+  display: table;
+}
+.witness {
+  display: table-cell;
+}
 
+@media screen and (max-width: 576px) {
+  .witness-row {
+    display: inline-block;
+  }
+  .witness {
+    display: inline-block;
+  }
+}
+*/
+/* <--- */
 
 /* ****************************** 
  LOCATION
@@ -2519,7 +2540,9 @@ div.rocket div {
   box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
 }
 
-
+.veggie-video {
+  height: 600px;
+}
 
 /* ****************************** 
  GALLERY
