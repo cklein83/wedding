@@ -417,10 +417,21 @@
 //		document.getElementById("seconds").innerHTML = seconds + " <small>Sekunden</small> ";
 
 	// If the count down is finished, write some text 
-	if (distance < 0) {
+	//if (distance < 0) {
+	if (true) {			
 	    clearInterval(x);
-	    document.getElementById("demo").innerHTML = "Wir sind Mann & Frau!";
+	    //$("#married").html("&#x1F490; Wir sind Mann & Frau! &#x1F490;");
+	    $("#married").html("&#x1F389; &#x1F38A; &#x1F388; Wir sind Mann & Frau! &#x1F388; &#x1F38A; &#x1F389;");	    
+	    $("#countdown").hide();
 	}
+
+	/*
+	&#x1F490;
+
+&#x1F389;
+&#x1F38A;
+&#x1F388;
+	*/
 
 }, 1000);
 			

@@ -1158,6 +1158,14 @@ div.rocket div {
   z-index: 2;
 }
 
+#qbootstrap-countdown #married {
+  font-size: 40px;
+  color: #fff;
+  margin: 0 30px;
+  display: inline-block;
+  /*font-family: "Clicker Script", cursive;*/
+}
+
 /* ****************************** 
  COUPLE
 ****************************** */
