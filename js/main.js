@@ -2,9 +2,6 @@
 	
 	'use strict';
 
-	// form: age control
-	$("#age").selectmenu();
-
 	// iPad and iPod detection	
 	var isiPad = function(){
 		return (navigator.platform.indexOf("iPad") != -1);
@@ -277,6 +274,9 @@
 
 	var formLogic = function() {
 		// submit logic
+
+		// form: age control
+		$("#attendee-age").selectmenu();
 
 	    //$("#attendee-success-alert").hide();
 
