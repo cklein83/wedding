@@ -51,8 +51,8 @@
 		<!-- Flexslider  -->
 		<link rel="stylesheet" href="css/flexslider.css">
 		<!-- Owl Carousel -->
-		<link rel="stylesheet" href="css/owl.carousel.min.css">
-		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<!-- 		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css"> -->
 		<!-- Magnific popup  -->
 		<link rel="stylesheet" href="css/magnific-popup.css">
 		<!-- Bootstrap  -->
@@ -220,6 +220,9 @@
 					</div>
 					<div class="row animate-box">
 						<div class="col-md-8 col-md-offset-2 text-center">
+							<p id="married">
+								Mann und Frau seit:
+							</p>						
 							<p id="countdown" class="countdown">
 								<span id="days"></span>
 								<span id="hours"></span>
@@ -227,8 +230,6 @@
 								<!--
 								<span id="seconds"></span>
 							-->
-							</p>
-							<p id="married">
 							</p>	
 						</div>
 					</div>
@@ -1003,16 +1004,18 @@
 				</div>
 			</div>
 
+<!--
             <div class="row">
 				<div class="alert alert-success" id="attendee-success-alert">
 				  <strong>Dankeschön! </strong> Du nimmst an der Hochzeit teil.
 				</div>                           
             </div>
+            -->
 
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-2">
 
-					<form id="attend-form" name="attendee" class="form" method="POST" data-netlify="true" netlify-honeypot="phone">
+					<form id="attend-form" action="/" name="attendee" class="form" method="POST" data-netlify="true" netlify-honeypot="attendee-phone">
 
 						<div class="row">
 							<h3># Einzelperson</h3>
@@ -1020,7 +1023,7 @@
 						<div class="row">
 					    	<div class="col-md-5">
 					    	    <div class="form-group">								      
-					    	        <input type="text" class="form-control" id="name" placeholder="Vor- und Nachname" name="name">
+					    	        <input type="text" class="form-control" id="attendee-name" placeholder="Vor- und Nachname" name="Name">
 					    	    </div>
 					    	</div>
 					    	<div class="col-md-5">
@@ -1028,8 +1031,8 @@
 					    		<!--
 					    			<input type="text" class="form-control" id="age" placeholder="Alter (bei Kindern bis 12 Jahre)" name="age" />
 					    			-->
-					    			<select id="age" name="age" class="form-control">
-					    				<option>Alter (bei Kindern)</option>
+					    			<select id="attendee-age" name="Alter" class="form-control">
+					    				<option>Alter (bei Kindern unter 12 Jahren)</option>
 					    				<option>1 Jahr alt</option>
 					    				<option>2 Jahre alt</option>
 					    				<option>3 Jahre alt</option>
@@ -1041,7 +1044,7 @@
 					    				<option>9 Jahre alt</option>
 					    				<option>10 Jahre alt</option>
 					    				<option>11 Jahre alt</option>
-					    				<option>12 Jahre alt</option>					    				
+					    				<!--<option>12 Jahre alt</option>-->
 					    			</select>
 					    		</div>	
 					    	</div>    							
@@ -1055,7 +1058,7 @@
 						    -->						
 							<div class="col-md-5">	
 								<div class="form-group">
-									<button type="submit" class="btn btn-primary btn-block btn-yes">
+									<button type="submit" name="Zusage" class="btn btn-primary btn-block btn-yes">
 										Zusagen
 										<span class="glyphicon glyphicon-ok"></span>
 									</button>
@@ -1063,7 +1066,7 @@
 							</div>
 							<div class="col-md-5">	
 								<div class="form-group">								
-									<button type="submit" class="btn btn-primary btn-block btn-no">
+									<button type="submit" name="Absage" class="btn btn-primary btn-block btn-no">
 									  Absagen									  
 									  <span class="glyphicon glyphicon-remove"></span>
 									</button>							
@@ -1073,7 +1076,7 @@
 					
 						<div class="row col-sm-1 phone">						
 							<!--<div class="form-group" data-netlify-recaptcha="true"></div>-->
-							<label>Telefon: <input name="phone" /></label>
+							<label>Telefon: <input name="attendee-phone" /></label>
 						</div>
 
 					</form>
@@ -1431,18 +1434,18 @@
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- YTPlayer -->
-	<script src="js/jquery.mb.YTPlayer.min.js"></script>
+	<!-- <script src="js/jquery.mb.YTPlayer.min.js"></script> -->
 	<!-- Flexslider -->
 	<script src="js/jquery.flexslider-min.js"></script>
 	<!-- Owl Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
+	<!-- <script src="js/owl.carousel.min.js"></script> -->
 	<!-- Parallax -->
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
 
-    <script type="text/javascript" src="js/slick.min.js"></script>
+    <!-- <script type="text/javascript" src="js/slick.min.js"></script> -->
 
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>

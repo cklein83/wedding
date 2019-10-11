@@ -860,7 +860,7 @@ div.rocket div {
 
 .qbootstrap-slider-hero {
   min-height: 800px;
-  background: #fff url(../images/loader.gif) no-repeat center center;
+  /*background: #fff url(../images/loader.gif) no-repeat center center;*/
 }
 .qbootstrap-slider-hero .flexslider {
   border: none;
@@ -1162,7 +1162,7 @@ div.rocket div {
   font-size: 40px;
   color: #fff;
   margin: 0 30px;
-  display: inline-block;
+  display: none;
   /*font-family: "Clicker Script", cursive;*/
 }
 
@@ -2153,7 +2153,8 @@ div.rocket div {
 }
 
 #qbootstrap-started #attendee-success-alert {
-  display: none;
+  display: none;  
+  background: #f0fff0 !important;  
 }
 
 #qbootstrap-started button[type=submit] {
@@ -2251,8 +2252,6 @@ div.rocket div {
   box-shadow: none;
   border-color: #e996a3 !important;
 }
-
-
 
 
 /* ****************************** 
