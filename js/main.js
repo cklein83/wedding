@@ -283,9 +283,11 @@
 	    let accept = false;
 		$("#attendee-btn-yes").click(function() {
 			accept = true;
+			$("#attendee-response").val("Zusage");
 		});
 		$("#attendee-btn-no").click(function() {
 			accept = false;
+			$("#attendee-response").val("Absage");
 		});
 
 		$("#attend-form").submit(function(e) {
@@ -312,11 +314,10 @@
 					} else {
 						alert("Schade, dass Du nicht teilnehmen kannst :(");					
 					}
-
-					$("#attendee-name").val("");
-					$("#attendee-age").val("-");
-					$("#attendee-age").selectmenu("refresh");
 				});
+				$("#attendee-name").val("");
+				$("#attendee-age").val("-");
+				$("#attendee-age").selectmenu("refresh");				
 			}
 		});
 	};
