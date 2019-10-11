@@ -1034,7 +1034,7 @@
 					    			<input type="text" class="form-control" id="age" placeholder="Alter (bei Kindern bis 12 Jahre)" name="age" />
 					    			-->
 					    			<select id="attendee-age" name="Alter" class="form-control">
-					    				<option>Alter (bei Kindern unter 12 Jahren)</option>
+					    				<option value="-">Alter (bei Kindern unter 12 Jahren)</option>
 					    				<option>1 Jahr alt</option>
 					    				<option>2 Jahre alt</option>
 					    				<option>3 Jahre alt</option>
@@ -1060,7 +1060,7 @@
 						    -->						
 							<div class="col-md-5">	
 								<div class="form-group">
-									<button type="submit" name="Zusage" class="btn btn-primary btn-block btn-yes">
+									<button type="submit" id="attendee-btn-yes" name="Zusage" class="btn btn-primary btn-block btn-yes">
 										Zusagen
 										<span class="glyphicon glyphicon-ok"></span>
 									</button>
@@ -1068,7 +1068,7 @@
 							</div>
 							<div class="col-md-5">	
 								<div class="form-group">								
-									<button type="submit" name="Absage" class="btn btn-primary btn-block btn-no">
+									<button type="submit" id="attendee-btn-no" name="Absage" class="btn btn-primary btn-block btn-no">
 									  Absagen									  
 									  <span class="glyphicon glyphicon-remove"></span>
 									</button>							

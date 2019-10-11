@@ -280,11 +280,19 @@
 
 	    //$("#attendee-success-alert").hide();
 
+	    let accept = false;
+		$("#attendee-btn-yes").click(function() {
+			accept = true;
+		});
+		$("#attendee-btn-no").click(function() {
+			accept = false;
+		});
+
 		$("#attend-form").submit(function(e) {
 			e.preventDefault();
 			var $form = $(this);
 
-			let success = true; //TODO validate
+			let success = true;
 
 			var name = $.trim($("#attendee-name").val());
 		    //var email = $.trim($("#attendee-email").val());         
@@ -299,12 +307,15 @@
 			// on success
 			if (success) {			
 				$.post($form.attr("action"), $form.serialize()).then(function() {
-					alert("Dankeschön. Du nimmst an der Hochzeit teil.");
-					/*
-					$("#attendee-success-alert").fadeTo(7000, 500).slideUp(500, function() {
-						$("#attendee-success-alert").slideUp(500);
-					});
-					*/
+					if (accept) {
+						alert("Dankeschön. Du nimmst an der Hochzeit teil =)");					
+					} else {
+						alert("Schade, dass Du nicht teilnehmen kannst :(");					
+					}
+
+					$("#attendee-name").val("");
+					$("#attendee-age").val("-");
+					$("#attendee-age").selectmenu("refresh");
 				});
 			}
 		});
