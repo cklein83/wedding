@@ -2696,17 +2696,20 @@ div.rocket div {
   padding-top: 60px;
 }
 
-button.mfp-close {
-  background: #393e46;
-}
+/* Arrows */
 
 button.mfp-arrow {
- background: #e996a3; 
+ /*background: #e996a3;*/
+ background: rgba(255, 255, 255, 0.2);
 }
 
-button.mfp-close {
-  right: 0px !important;
+button.mfp-arrow:hover {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }
+
+
 
 .mfp-arrow-left:before, .mfp-arrow-left .mfp-b {
   border: none;
@@ -2716,10 +2719,20 @@ button.mfp-close {
   border: none;
 }
 
+/* Close Btn */
+
+button.mfp-close {
+  background: #393e46;
+}
+
+button.mfp-close {
+  right: 0px !important;
+}
+
 button.mfp-close:hover {
-    -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
-    box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 /* ****************************** 
