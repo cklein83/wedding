@@ -247,8 +247,14 @@ h1, h2, h3, h4, h5, h6 {
   /*
   padding-bottom: 50px;
   margin-bottom: 50px;*/
+
+/*
   padding-bottom: 25px;
   margin-bottom: 25px;
+  */
+  padding-bottom: 0 !important;
+  margin-bottom: 10px !important;
+
   clear: both;
 }
 .section-heading.svg-sm-2 .svg {
@@ -297,11 +303,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .qbootstrap-section {
   padding: 5em 0;
-  /*padding-bottom: 45px;*/
+  padding-bottom: 150px;
 }
 
 .qbootstrap-section .social {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 #qbootstrap-when-where {
@@ -756,7 +762,7 @@ div.rocket div {
 .qbootstrap-cover .display-t,
 .video-hero .display-t {
   display: table;
-  height: 1000px;
+  height: 1200px;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -891,7 +897,7 @@ div.rocket div {
   z-index: 1;
 }
 .qbootstrap-slider-hero .flexslider .flex-control-nav {
-  bottom: 7em;
+  bottom: 10em;
   z-index: 1000;
 }
 .qbootstrap-slider-hero .flexslider .flex-control-nav li a {
@@ -1179,7 +1185,7 @@ div.rocket div {
 .couple {
   border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 40px;
-  margin-top: 110px;
+  margin-top: 140px;
 }
 .couple.groom {
   position: relative;
@@ -1293,6 +1299,7 @@ div.rocket div {
 .timeline {
   list-style: none;
   padding: 20px 0 20px;
+  padding-top: 5px;
   position: relative;
 }
 .timeline:before {
@@ -1554,6 +1561,7 @@ div.rocket div {
   fill: #fff;
 }
 #qbootstrap-testimonials .box-testimony {
+  margin-top: 17px;
   margin-bottom: 2em;
   float: left;
 }
@@ -1710,17 +1718,13 @@ div.rocket div {
  VERTRAUTE
 ****************************** */
 
-#qbootstrap-people .section-heading {
-  /*margin-bottom: 5em;*/
-}
-
 /* Babygirl */
 
 .witness-shiri {
   position: relative;
   
-  margin-top: 110px !important;
-  margin-bottom: 75px;  
+  margin-top: 140px !important;
+  margin-bottom: 40px;  
 
   padding: 40px;
 
@@ -1943,10 +1947,11 @@ div.rocket div {
 .wedding-events .desc {  
   padding: 2em;
   padding-top: 15px;
+  padding: 0px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 0;  
-  min-height: 680px;
+  min-height: 660px;
 
   /*margin-bottom: 100px;*/
 }
@@ -2007,15 +2012,24 @@ div.rocket div {
   }
 }
 
+.wedding-events .location-img {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 
+.wedding-events .btn-sm {
+  margin-bottom: 10px;
+}
 
 /* ****************************** 
  RESPONSUM
 ****************************** */
 
 #qbootstrap-started {
+  /*
   position: relative;
   padding-bottom: 125px;
+  */
 }
 #qbootstrap-started .section-heading {
   margin-bottom: 0 !important;
@@ -2033,6 +2047,7 @@ div.rocket div {
 }
 #qbootstrap-started .section-heading h3 {
   color: rgba(255, 255, 255, 0.8);
+  margin-top: 0;
 }
 #qbootstrap-started .section-heading .datewed {
   font-size: 24px;
@@ -2132,6 +2147,7 @@ div.rocket div {
   color: #fff;
   /*text-align: center;*/
   padding-left: 20px;
+  margin-top: 0;
 }
 
 #qbootstrap-started .form-inline .form-group {
@@ -2262,6 +2278,9 @@ div.rocket div {
 
 #qbootstrap-veggie {
   padding-top: 75px;
+    /*background: #e996a3;*/
+  z-index: 0 !important;
+  padding-bottom: 25px;
 }
 
 #qbootstrap-veggie .section-heading h2 {
@@ -2277,12 +2296,6 @@ div.rocket div {
 }
 
 #qbootstrap-veggie .section-heading {
-  padding-bottom: 0;
-}
-
-#qbootstrap-veggie {
-  /*background: #e996a3;*/
-  z-index: 0 !important;
   padding-bottom: 0;
 }
 
@@ -2325,19 +2338,46 @@ div.rocket div {
 #qbootstrap-veggie .flex-control-nav {
   /*display: none;*/
   /*top: 725px;*/
-  top: 475px;
+  top: 445px;
   /*height:1000px;
   z-index:50;*/
 }
 
 @media screen and (max-width: 480px) {
   #qbootstrap-veggie .flex-control-nav {
-    top: 320px;
+    top: 290px;
   }
 } 
 
 #qbootstrap-veggie .flex-direction-nav {
   display: none;
+}
+
+.veggie-quote {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-top: 160px;
+  padding: 40px;
+  position: relative;
+  z-index: 0;
+
+  min-height: 600px;
+}
+
+@media screen and (max-width: 480px) {
+  .veggie-quote {
+    padding: 5px;
+  }
+}  
+
+.veggie-quote:after {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  content: '';
+  background: #eee;
+  z-index: -1;
 }
 
 .veggie-quote img {
@@ -2363,33 +2403,6 @@ div.rocket div {
   }
 }
 
-.veggie-quote {
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  margin-top: 190px;
-  padding: 40px;
-  position: relative;
-  z-index: 0;
-
-  min-height: 600px;
-}
-
-@media screen and (max-width: 480px) {
-  .veggie-quote {
-    padding: 5px;
-  }
-}  
-
-.veggie-quote:after {
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  content: '';
-  background: #eee;
-  z-index: -1;
-}
-
 .veggie-quote .desc {
   z-index: 1;
   margin-top: 75px;
@@ -2399,10 +2412,6 @@ div.rocket div {
   color: #e996a3;
   font-size: 40px;
   margin-bottom: 30px;
-}
-
-.col-md-12 .qbootstrap-press-item {
-  width: 100%;
 }
 
 .veggie-video {
@@ -2601,13 +2610,19 @@ div.rocket div {
   transform: scale(1.1);
 }
 
-.qbootstrap-press {
+.qbootstrap-press-item-container {
   /*background: #f4f4f4;*/
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.col-md-12 .qbootstrap-press-item {
+  width: 100%;
 }
 
 .qbootstrap-press .qbootstrap-press-item {  
   float: left;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   position: relative;
   overflow: hidden;
   display: -webkit-box;
@@ -2620,8 +2635,9 @@ div.rocket div {
   -ms-border-radius: 4px;
   border-radius: 4px;
 
-  border: 1px solid rgba(0, 0, 0, 0.05);  
-  margin-top: 40px;
+  /*border: 1px solid rgba(0, 0, 0, 0.05);*/
+
+  margin-top: 37px;
 
   min-height: 400px;
 
@@ -2664,14 +2680,36 @@ div.rocket div {
   color: #444;
   position: relative;
 }
-.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .qbootstrap-press-title .qbootstrap-border {
+.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .title {
+  height: 70px;
+}
+
+@media screen and (max-width: 480px) {
+  .qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .title {
+    height: auto;
+  }
+}
+
+.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .body {
+  height: 140px;
+}
+
+@media screen and (max-width: 480px) {
+  .qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .body {
+    height: auto;
+  }
+}
+
+
+.qbootstrap-press .qbootstrap-press-item .qbootstrap-press-text .qbootstrap-border {
   position: absolute;
   left: 0;
   bottom: 0;
   height: 2px;
   width: 30px;
-  background: #e996a3;
+  background: #e996a3;  
 }
+
 .qbootstrap-press .qbootstrap-press-item .qbootstrap-press-img {
   position: absolute;
   right: 0;
