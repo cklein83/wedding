@@ -718,7 +718,8 @@ div.rocket div {
 .qbootstrap-cover,
 .qbootstrap-hero {
   position: relative;
-  height: 950px;
+  /*height: 950px;*/
+  height: 1200px;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
