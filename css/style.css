@@ -453,7 +453,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #footer {
-  padding: 50px 0;
+  /*padding: 50px 0;*/
   color: #7f7f7f;
 }
 #footer .copyright {
@@ -461,6 +461,14 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 0;
 }
 
+#footer img {
+  width: 256px;
+  height: 256px;
+  display: inline-block;
+  text-align: center;
+}
+
+/* ############# */
 
 .btn.btn-primary {
   background: #e996a3;
@@ -879,6 +887,19 @@ div.rocket div {
   position: relative;
   overflow: hidden;
 }
+
+.qbootstrap-slider-hero .flexslider .slides img {
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+
+/*
+  top: -300px;
+  position: relative;
+  */
+  margin-bottom: 15px;
+}
+
 .qbootstrap-slider-hero .flexslider .slides li {
   background-repeat: no-repeat;
   background-size: cover;
@@ -2733,6 +2754,10 @@ div.rocket div {
 
 #qbootstrap-gallery {
   padding-top: 60px;
+}
+
+#qbootstrap-gallery {
+  padding-bottom: 0;
 }
 
 /* Arrows */
