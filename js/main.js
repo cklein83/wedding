@@ -2,8 +2,6 @@
 	
 	'use strict';
 
-	$("#age").selectmenu();
-
 	// iPad and iPod detection	
 	var isiPad = function(){
 		return (navigator.platform.indexOf("iPad") != -1);
@@ -17,6 +15,7 @@
 	};
 
 	// Carousel Feature Slide
+	/*
 	var testimonialCarousel = function(){	
 		var owl = $('.owl-carousel-fullwidth');
 		owl.owlCarousel({
@@ -30,6 +29,7 @@
 			autoHeight: false
 		});
 	};
+	*/
 
 	var sliderMain = function() {	
 	  	$('#qbootstrap-slider-hero .flexslider').flexslider({
@@ -69,171 +69,6 @@
 			}
 
 	  	});
-
-        /*
-	  	$('#qbootstrap-slider-responsum .flexslider').flexslider({
-			animation: "slide",
-			slideshow: false,
-			animationLoop: false,
-			directionNav: true,
-			controlNav: true,
-			prevText: "",
-			nextText: "",
-			start: function(slider) {
-				slider.removeSlide(0);
-			},
-			before: function(slider) {
-				//alert(slider.index);
-				//alert(slider.currentSlide);
-			}
-
-	  	}).ready(function() { 
-			
-	  		function getTotalSlideCount() {
-				var total = $('#qbootstrap-slider-responsum .form-person').length;
-				return total;
-	  		}	  		
-
-		  	var slider = $('#qbootstrap-slider-responsum .flexslider').data("flexslider");
-
-			const FORM_MAX_PEOPLE = 4;
-
-			var slides = []
-			for (var i = 0; i < FORM_MAX_PEOPLE; i++) {
-				slides.push(false);
-			}
-			
-			// ADD
-			 
-			// add  person
-			$("#attendee-add").click(function() {
-				//alert("add");
-				addFormPerson(false);
-			});
-
-			function addFormPerson(first) {			
-				// abort if full
-				if (getTotalSlideCount() == FORM_MAX_PEOPLE) {
-					alert("Maximum erreicht!");
-					return;		
-				}	
-				// https://stackoverflow.com/questions/27542147/dynamic-add-slide-in-flexslider-carousel
-				// add the line
-				slider.addSlide($('<li>' + buildFormPerson(first) + '</li>'));	
-			}
-
-			function buildFormPerson(first) {		
-				var btnType = first ? "add" : "sub";
-				var btnVal = first ? "Hinzufügen" : "Entfernen";
-				//var persNo = getTotalSlideCount() + 1;				
-				function getFreePersNo() {
-					if (slides.length > 0) {
-						for (var i = 0; i < FORM_MAX_PEOPLE; i++) {
-							if (!slides[i]) {
-								slides[i] = true;
-								return i;
-							}
-						}
-					}
-					return 0;
-				}
-
-				var persNo = getFreePersNo() + 1;
-				return `
-					<div class="col-md-10 form-group form-person">
-						<div class="row">
-					    	<h3>Person #${persNo}</h3>								
-					    </div>
-					    <div class="row">	
-					    	<div class="col-md-5">
-					    	    <div class="form-group">								      
-					    	      <input type="text" class="form-control" id="fname-${persNo}" placeholder="Vorname" name="fname-${persNo}">
-					    	    </div>
-					    	    <div class="form-group">								      
-					    	      <input type="text" class="form-control" id="lname-${persNo}" placeholder="Nachname" name="lname-${persNo}">
-					    	    </div>
-					    	</div>
-					    	<div class="col-md-3">
-					    		<div class="form-group">								      
-					    			<input type="text" class="form-control" id="age-${persNo}" placeholder="Alter (falls Kind)" name="age-${persNo}" />
-					    		</div>									
-					    	    <div class="form-check form-check-inline">
-					    		  <input class="form-check-input" type="radio" name="attend-${persNo}" id="attend-confirm-${persNo}" value="Nimmt teil" checked>
-					    		  <label class="form-check-label" for="attend-confirm-${persNo}">
-					    		    Nimmt teil
-					    		  </label>
-					    		</div>
-					    		<div class="form-check form-check-inline">
-					    		  <input class="form-check-input" type="radio" name="attend-${persNo}" id="attend-cancel-${persNo}" value="Kommt nicht">
-					    		  <label class="form-check-label" for="attend-cancel-${persNo}">
-					    		    Kommt nicht
-					    		  </label>
-					    		</div>							
-					    	</div>
-					    </div>	
-					</div>`;			
-			}
-
-			
-			// function random() {
-			// 	return generateId(5);
-			// }
-
-			// function generateId(length) {
-		 //   		var result = '';
-		 //   		var characters = '0123456789';
-		 //   		var charactersLength = characters.length;
-		 //   		for (var i = 0; i < length; i++) {
-		 //      		result += characters.charAt(Math.floor(Math.random() * charactersLength));
-		 //   		}
-		 //   		return result;
-			// }
-			
-			
-			// REMOVE			
-
-			// remove person
-			$(".btn-sub").click(function() {
-				//alert("sub");
-				//var index = $('#qbootstrap-slider-responsum li:has(.flex-active)').index('.flex-control-nav li') + 1;				
-				//alert(index);
-				removeFormPerson(); 
-			});	
-
-			// remove form line on sub-button click
-			function removeFormPerson(index) {				
-				//$("#attend-form-line-" + index).remove();		
-				//TODO use slider
-				slider.removeSlide(slider.currentSlide);
-				slides[index] = false;
-			}
-
-			// first form line
-			//addFormPerson(true);		
-
-		});		  
-        */
-
-    	// submit logic
-
-	    //$("#attendee-success-alert").hide();
-
-		$("#attend-form").submit(function(e) {
-			e.preventDefault();
-			var $form = $(this);
-
-			let success = true;
-
-			// on success
-			if (success) {
-				alert("SUCCESS!!!");
-				// $.post($form.attr("action"), $form.serialize()).then(function() {
-				// 	$("#attendee-success-alert").fadeTo(2000, 500).slideUp(500, function() {
-				// 		$("#attendee-success-alert").slideUp(500);
-				// 	});
-				// });
-			}
-		});
 	};
 
 	// animate-box
@@ -394,64 +229,113 @@
 	// Update the count down every 1 second
 	var x = setInterval(function() {
 
-	// Get todays date and time
-	var now = new Date().getTime();
+		// Get todays date and time
+		var now = new Date().getTime();
+		//var now = new Date("Mar 19, 2020 12:05:00").getTime();
 
-	// Find the distance between now an the count down date
-	var distance = countDownDate - now;
+		// Find the distance between now an the count down date
+		if (countDownDate > now) {		
+			var distance = countDownDate - now;
+		} else {
+			$("#married").show();	    
+			var distance = now - countDownDate;
+		}
 
-	// Time calculations for days, hours, minutes and seconds
-	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-	// Display the result in an element with id="demo"
-	// document.getElementById("demo").innerHTML = days + "Days " + hours + "Hours "
-	// + minutes + "Minutes " + seconds + "Seconds ";
+		// Display the result in an element with id="demo"
+		// document.getElementById("demo").innerHTML = days + "Days " + hours + "Hours "
+		// + minutes + "Minutes " + seconds + "Seconds ";
 
-	// Display the result in an element with id="demo"
-	document.getElementById("days").innerHTML = days +" <small>Tage</small>";
-	document.getElementById("hours").innerHTML = hours + " <small>Stunden</small> ";
-	document.getElementById("minutes").innerHTML = minutes + " <small>Minuten</small> ";
-//		document.getElementById("seconds").innerHTML = seconds + " <small>Sekunden</small> ";
+		// Display the result in an element with id="demo"
+		document.getElementById("days").innerHTML = days +" <small>Tage</small>";
+		document.getElementById("hours").innerHTML = hours + " <small>Stunden</small> ";
+		document.getElementById("minutes").innerHTML = minutes + " <small>Minuten</small> ";
+	//		document.getElementById("seconds").innerHTML = seconds + " <small>Sekunden</small> ";
 
-	// If the count down is finished, write some text 
-	//if (distance < 0) {
-	if (true) {			
-	    clearInterval(x);
-	    //$("#married").html("&#x1F490; Wir sind Mann & Frau! &#x1F490;");
-	    $("#married").html("&#x1F389; &#x1F38A; &#x1F388; Wir sind Mann & Frau! &#x1F388; &#x1F38A; &#x1F389;");	    
-	    $("#countdown").hide();
-	}
-
-	/*
-	&#x1F490;
-
-&#x1F389;
-&#x1F38A;
-&#x1F388;
-	*/
-
-}, 1000);
+		// If the count down is finished, write some text 
+		/*
+		if (distance < 0) {		
+		    clearInterval(x);
+		    //$("#married").html("&#x1F490; Wir sind Mann & Frau! &#x1F490;");
+		    $("#married").show();	    
+		    //$("#countdown").hide();
+		}
+		*/
+	}, 1000);
 			
-var bgVideo = function() {
-	$('.player').mb_YTPlayer();
-};
+// var bgVideo = function() {
+// 	$('.player').mb_YTPlayer();
+// };
 
-// Document on load.
-$(function() {
-	burgerMenu();
-	testimonialCarousel();
-	sliderMain();
-	clickMenu();
-	parallax();
-	// windowScroll();
-	navigationSection();
-	contentWayPoint();
-	inlineSVG();
-	bgVideo();
-});
+	var formLogic = function() {
+		// submit logic
+
+		// form: age control
+		$("#attendee-age").selectmenu();
+
+	    //$("#attendee-success-alert").hide();
+
+	    let accept = false;
+		$("#attendee-btn-yes").click(function() {
+			accept = true;
+			$("#attendee-response").val("Zusage");
+		});
+		$("#attendee-btn-no").click(function() {
+			accept = false;
+			$("#attendee-response").val("Absage");
+		});
+
+		$("#attend-form").submit(function(e) {
+			e.preventDefault();
+			var $form = $(this);
+
+			let success = true;
+
+			var name = $.trim($("#attendee-name").val());
+		    //var email = $.trim($("#attendee-email").val());         
+			//if (name !== "" && email !== "") {
+		    if (name === "") {
+		    	$("#attendee-name").addClass("error");
+		    	success = false;
+		    } else {
+		    	$("#attendee-name").removeClass("error");
+		    }
+
+			// on success
+			if (success) {			
+				$.post($form.attr("action"), $form.serialize()).then(function() {
+					if (accept) {
+						alert("Dankeschön. Du nimmst an der Hochzeit teil =)");					
+					} else {
+						alert("Schade, dass Du nicht teilnehmen kannst :(");					
+					}
+				});
+				$("#attendee-name").val("");
+				$("#attendee-age").val("-");
+				$("#attendee-age").selectmenu("refresh");				
+			}
+		});
+	};
+
+	// Document on load.
+	$(function() {
+		burgerMenu();
+		//testimonialCarousel();
+		sliderMain();
+		clickMenu();
+		parallax();
+		// windowScroll();
+		navigationSection();
+		contentWayPoint();
+		inlineSVG();
+		//bgVideo();
+		formLogic();
+	});
 
 
 }());
