@@ -1086,13 +1086,38 @@
 						<div class="row col-sm-1 phone">						
 							<!--<div class="form-group" data-netlify-recaptcha="true"></div>-->
 							<label>Telefon: <input name="attendee-phone" /></label>
+							<input type="hidden" name="subject" value="Wedding Page von Pam &amp; Chris: Neue Rückmeldung =)" />
 						</div>
 
 					</form>
 				</div>
 			</div>
 		</div>
+
+	<!-- Modal -->
+		<div id="attendee-popup" class="modal modal-md fade" role="dialog">
+		  <div class="modal-dialog modal-dialog-centered">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Rückmeldung</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p class="msg"></p>
+		      </div>
+	<!--
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+		      </div>
+		  -->
+		    </div>
+
+		  </div>
+		</div>		
 	</div>
+
 
 	<div id="qbootstrap-veggie" class="qbootstrap-section" data-section="veggie">
 

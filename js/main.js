@@ -307,13 +307,20 @@
 		    }
 
 			// on success
-			if (success) {			
+			if (success) {				
 				$.post($form.attr("action"), $form.serialize()).then(function() {
 					if (accept) {
-						alert("Dankeschön. Du nimmst an der Hochzeit teil =)");					
+						//alert("Dankeschön. Du nimmst an der Hochzeit teil =)");					
+						$("#attendee-popup .msg").text("Dankeschön. Du nimmst an der Hochzeit teil =)");
 					} else {
-						alert("Schade, dass Du nicht teilnehmen kannst :(");					
+						//alert("Schade, dass Du nicht teilnehmen kannst :(");					
+						$("#attendee-popup .msg").text("Schade, dass Du nicht teilnehmen kannst :(");
 					}
+					
+					$("#attendee-popup").modal();					
+					setTimeout(function() {
+						$("#attendee-popup").modal("hide");
+					}, 3000);
 				});
 				$("#attendee-name").val("");
 				$("#attendee-age").val("-");
