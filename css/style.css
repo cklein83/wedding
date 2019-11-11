@@ -1852,22 +1852,26 @@ div.rocket div {
 }
 
 .witness-box {
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1;*/
 }
 
 .witness-box .desc {
+  /*
   display: flex;
   flex-direction: column;
   flex: 1;  
+  */
 }
 
 .witness-box .vbottom {
+  /*
   display: flex;
   align-items: flex-end;    
   justify-content: center; 
   flex: 1;                      
+  */
 }
 
 /* --- */
