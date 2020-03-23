@@ -1,0 +1,66 @@
+
+
+
+.qbootstrap-section,
+.couple-col,
+.wedding-events,
+.qbootstrap-press,
+.witness-row {
+	page-break-before: always;
+}
+
+p {
+	font-family: "Times New Roman", Times, serif;
+}
+
+#qbootstrap-story li {
+    page-break-inside: avoid;
+}
+
+.qbootstrap-slider-hero li {
+	height: 900px;
+}
+
+.flex-control-nav {
+	display: none;
+}
+
+.container {
+	width: 1000px;
+}
+
+.qbootstrap-cover .display-tc, .video-hero .display-tc {
+	position: absolute;
+	top: 300px;	
+}
+
+ul.social-circle {
+	display: none;
+}
+
+.js .animate-box {
+  opacity: 1;
+}
+
+/*
+.witness-shiri {
+	margin-top: 50px;
+}
+*/
+
+#qbootstrap-testimonials .box-testimony blockquote .quote {
+	position: relative;
+}
+
+.veggie-quote-container {
+	page-break-before: always;	
+	margin-top: 50px;
+}
+
+.veggie-video-container {
+	display: none;
+}
+
+#footer div.container {
+	padding-top: 675px;
+}

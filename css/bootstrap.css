@@ -227,8 +227,8 @@ th {
   *,
   *:before,
   *:after {
-    background: transparent !important;
-    color: #000 !important;
+    /*background: transparent !important;*/
+    /*color: #000 !important;*/
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -238,9 +238,11 @@ th {
     text-decoration: underline;
   }
 
+/*
   a[href]:after {
     content: " (" attr(href) ")";
   }
+  */
 
   abbr[title]:after {
     content: " (" attr(title) ")";
