@@ -237,6 +237,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0s;
 }
 
+#qbootstrap-header .nav li a {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
 #qbootstrap-home {
   padding-top: 0px;
 }
@@ -2048,6 +2053,10 @@ div.rocket div {
 
 .wedding-events .btn-sm {
   margin-bottom: 10px;
+}
+
+.wedding-events .past span {
+  color: #bbb !important;
 }
 
 /* ****************************** 
