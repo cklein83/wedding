@@ -339,7 +339,7 @@
 		// windowScroll();
 		navigationSection();
 		contentWayPoint();
-		inlineSVG();
+		//inlineSVG();
 		//bgVideo();
 		formLogic();
 	});

@@ -1478,6 +1478,11 @@ div.rocket div {
   right: auto;
 }
 
+.timeline .em {
+  width: 1em !important;
+  height: 1em !important;
+}
+
 .timeline-title {
   margin-top: 10px;
   margin-bottom: 15px;
@@ -1980,8 +1985,8 @@ div.rocket div {
 }
 .wedding-events .desc {  
   padding: 2em;
-  padding-top: 15px;
-  padding: 0px;
+  padding-top: 5px;
+  padding: 25px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 0;  
@@ -2057,6 +2062,20 @@ div.rocket div {
 
 .wedding-events .past span {
   color: #bbb !important;
+}
+
+.wedding-events.church .desc .icon i {
+  padding: 5px !important;
+}
+
+.wedding-events .text-box {
+  min-height: 300px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.wedding-events .info-box {
+  min-height: 200px;
 }
 
 /* ****************************** 
@@ -2665,6 +2684,11 @@ div.rocket div {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.gallery video {
+  max-width: 100%;
+  height: auto;
 }
 
 .qbootstrap-press-item-container {
