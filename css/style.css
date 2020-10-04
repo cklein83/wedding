@@ -415,7 +415,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .qbootstrap-nav-toggle {
   position: absolute;
-  top: 12px;
+  top: 1px;
   right: 0px;
   z-index: 21;
   padding: 6px 0 0 0;
@@ -923,7 +923,7 @@ div.rocket div {
   z-index: 1;
 }
 .qbootstrap-slider-hero .flexslider .flex-control-nav {
-  bottom: 10em;
+  bottom: 6em;
   z-index: 1000;
 }
 .qbootstrap-slider-hero .flexslider .flex-control-nav li a {
