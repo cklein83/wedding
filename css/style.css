@@ -319,6 +319,17 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 0;
 }
 
+.quote {
+  font-style: italic;    
+}
+.quote-left, .quote-right {
+  font-size: 4em;
+  font-style: initial;
+  display: block;
+  float: left;
+  font-weight: bold;  
+}
+
 @media screen and (max-width: 480px) {
   .qbootstrap-section {
     padding: 3em 0;
